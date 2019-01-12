@@ -15,6 +15,15 @@
 		01AF34A021EA9B9C00AE0705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01AF349E21EA9B9C00AE0705 /* LaunchScreen.storyboard */; };
 		01AF34AB21EA9B9D00AE0705 /* Portable_calculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF34AA21EA9B9D00AE0705 /* Portable_calculatorTests.swift */; };
 		01AF34B621EA9B9D00AE0705 /* Portable_calculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF34B521EA9B9D00AE0705 /* Portable_calculatorUITests.swift */; };
+		01AF34CC21EAA41100AE0705 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34C921EAA41100AE0705 /* Lato-Bold.ttf */; };
+		01AF34CD21EAA41100AE0705 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34C921EAA41100AE0705 /* Lato-Bold.ttf */; };
+		01AF34CE21EAA41100AE0705 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34C921EAA41100AE0705 /* Lato-Bold.ttf */; };
+		01AF34CF21EAA41100AE0705 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34CA21EAA41100AE0705 /* Lato-Regular.ttf */; };
+		01AF34D021EAA41100AE0705 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34CA21EAA41100AE0705 /* Lato-Regular.ttf */; };
+		01AF34D121EAA41100AE0705 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34CA21EAA41100AE0705 /* Lato-Regular.ttf */; };
+		01AF34D221EAA41100AE0705 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34CB21EAA41100AE0705 /* Lato-Black.ttf */; };
+		01AF34D321EAA41100AE0705 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34CB21EAA41100AE0705 /* Lato-Black.ttf */; };
+		01AF34D421EAA41100AE0705 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34CB21EAA41100AE0705 /* Lato-Black.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,9 @@
 		01AF34B121EA9B9D00AE0705 /* Portable calculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Portable calculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AF34B521EA9B9D00AE0705 /* Portable_calculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portable_calculatorUITests.swift; sourceTree = "<group>"; };
 		01AF34B721EA9B9D00AE0705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01AF34C921EAA41100AE0705 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		01AF34CA21EAA41100AE0705 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		01AF34CB21EAA41100AE0705 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +111,13 @@
 		01AF349121EA9B9B00AE0705 /* Portable calculator */ = {
 			isa = PBXGroup;
 			children = (
-				01AF349221EA9B9B00AE0705 /* AppDelegate.swift */,
-				01AF349421EA9B9B00AE0705 /* ViewController.swift */,
-				01AF349621EA9B9B00AE0705 /* Main.storyboard */,
+				01AF34C421EA9DB200AE0705 /* UI */,
+				01AF34C321EA9DA500AE0705 /* Storyboards */,
 				01AF349C21EA9B9C00AE0705 /* Assets.xcassets */,
-				01AF349E21EA9B9C00AE0705 /* LaunchScreen.storyboard */,
-				01AF34A121EA9B9D00AE0705 /* Info.plist */,
-				01AF349921EA9B9B00AE0705 /* Portable_calculator.xcdatamodeld */,
+				01AF34C721EA9DDF00AE0705 /* Model */,
+				01AF34C621EA9DCF00AE0705 /* Controllers */,
+				01AF34C821EAA3CD00AE0705 /* Fonts */,
+				01AF34C521EA9DBA00AE0705 /* Support files */,
 			);
 			path = "Portable calculator";
 			sourceTree = "<group>";
@@ -126,6 +138,57 @@
 				01AF34B721EA9B9D00AE0705 /* Info.plist */,
 			);
 			path = "Portable calculatorUITests";
+			sourceTree = "<group>";
+		};
+		01AF34C321EA9DA500AE0705 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				01AF349621EA9B9B00AE0705 /* Main.storyboard */,
+				01AF349E21EA9B9C00AE0705 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		01AF34C421EA9DB200AE0705 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		01AF34C521EA9DBA00AE0705 /* Support files */ = {
+			isa = PBXGroup;
+			children = (
+				01AF349221EA9B9B00AE0705 /* AppDelegate.swift */,
+				01AF34A121EA9B9D00AE0705 /* Info.plist */,
+				01AF349921EA9B9B00AE0705 /* Portable_calculator.xcdatamodeld */,
+			);
+			name = "Support files";
+			sourceTree = "<group>";
+		};
+		01AF34C621EA9DCF00AE0705 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01AF349421EA9B9B00AE0705 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		01AF34C721EA9DDF00AE0705 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		01AF34C821EAA3CD00AE0705 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				01AF34CB21EAA41100AE0705 /* Lato-Black.ttf */,
+				01AF34C921EAA41100AE0705 /* Lato-Bold.ttf */,
+				01AF34CA21EAA41100AE0705 /* Lato-Regular.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +297,10 @@
 			files = (
 				01AF34A021EA9B9C00AE0705 /* LaunchScreen.storyboard in Resources */,
 				01AF349D21EA9B9C00AE0705 /* Assets.xcassets in Resources */,
+				01AF34CF21EAA41100AE0705 /* Lato-Regular.ttf in Resources */,
 				01AF349821EA9B9B00AE0705 /* Main.storyboard in Resources */,
+				01AF34D221EAA41100AE0705 /* Lato-Black.ttf in Resources */,
+				01AF34CC21EAA41100AE0705 /* Lato-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +308,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01AF34CD21EAA41100AE0705 /* Lato-Bold.ttf in Resources */,
+				01AF34D321EAA41100AE0705 /* Lato-Black.ttf in Resources */,
+				01AF34D021EAA41100AE0705 /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +318,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01AF34CE21EAA41100AE0705 /* Lato-Bold.ttf in Resources */,
+				01AF34D421EAA41100AE0705 /* Lato-Black.ttf in Resources */,
+				01AF34D121EAA41100AE0705 /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +511,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = "Portable calculator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +530,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = "Portable calculator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
