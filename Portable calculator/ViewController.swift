@@ -48,12 +48,14 @@ class ViewController: UIViewController {
         
         if runningNumber != "0" {
             runningNumber += "\(btn.tag)"
+            
         } else {
             runningNumber = ""
             runningNumber += "\(btn.tag)"
         }
         
         outputLabel.text = runningNumber
+        
         if let num = Double(runningNumber) {
             value = num
         }
@@ -101,20 +103,34 @@ class ViewController: UIViewController {
     }
     
     @IBAction func signPressed(_ sender: AnyObject) {
-        processOperation(CalcService.Operation.sign)
+        
+        if let num = Double(runningNumber) {
+            if num != 0 {
+                runningNumber = String(-num)
+                result = String(-num)
+                value = Double(result)!.round(to: 5)
+                outputLabel.text = String(value.formattedWithSeparator)
+            } else {
+                runningNumber = "0"
+                result = "0"
+                value = Double(result)!.round(to: 5)
+                outputLabel.text = String(value.formattedWithSeparator)
+            }
+            
+        }
     }
     
     @IBAction func percentPressed(_ sender: AnyObject) {
         
         if let num = Double(leftValStr), let num2 = Double(runningNumber) {
             runningNumber = String(num * num2 * 0.01)
-            result = String((num * num2 * 0.01))
+            result = String(num * num2 * 0.01)
             value = Double(result)!.round(to: 5)
             outputLabel.text = String(value.formattedWithSeparator)
             
         } else if let num = Double(runningNumber) {
             runningNumber = String(num * 0.01)
-            result = String((num * 0.01))
+            result = String(num * 0.01)
             value = Double(result)!.round(to: 5)
             outputLabel.text = String(value.formattedWithSeparator)
         }
@@ -122,10 +138,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onEqualPressed(_ sender: AnyObject) {
-        processOperation(currentOperation)
         
-        secondOperand.text = rightValStr
-        outputLabel.text = String(value.round(to: 5).formattedWithSeparator)
+        if currentOperation != CalcService.Operation.empty {
+            processOperation(currentOperation)
+            
+            secondOperand.text = rightValStr
+            outputLabel.text = String(value.round(to: 5).formattedWithSeparator)
+        }
+//        processOperation(currentOperation)
+//
+//        secondOperand.text = rightValStr
+//        outputLabel.text = String(value.round(to: 5).formattedWithSeparator)
     }
     
     @IBAction func onClearPressed(_ sender: AnyObject) {
