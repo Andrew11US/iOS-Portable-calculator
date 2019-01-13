@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var subtractBtn: UIButton!
     @IBOutlet weak var multiplyBtn: UIButton!
     @IBOutlet weak var divideBtn: UIButton!
+    @IBOutlet weak var signBtn: UIButton!
+    @IBOutlet weak var percentBtn: UIButton!
     @IBOutlet weak var outputLabel: UILabel!
     @IBOutlet weak var firstOperand: UILabel!
     @IBOutlet weak var secondOperand: UILabel!
@@ -29,13 +31,13 @@ class ViewController: UIViewController {
     var leftValStr = ""
     var rightValStr = ""
     var result = ""
-    var basePrice = 0.0
+    var value = 0.0
     var currentOperation = CalcService.Operation.empty
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        outputLabel.text = basePrice.round(to: 2).formattedWithSeparator
+        outputLabel.text = value.round(to: 5).formattedWithSeparator
     }
     
     //******************************
@@ -53,49 +55,77 @@ class ViewController: UIViewController {
         
         outputLabel.text = runningNumber
         if let num = Double(runningNumber) {
-            basePrice = num
+            value = num
         }
     }
     
     @IBAction func dotTapped(_ btn: UIButton!) {
         
-        runningNumber += "."
-        outputLabel.text = runningNumber
-        
-        if runningNumber == "." || runningNumber == "0" || runningNumber == "0." || runningNumber == "0.." || runningNumber == "0..." || runningNumber == "0...." || runningNumber == "0....." || runningNumber == "0......." || runningNumber == "0......." || runningNumber == "0".trimmingCharacters(in: ["."]) {
-            runningNumber = "0."
-            basePrice = 0.0
+        if runningNumber.contains(".") {
+            debugPrint("Dot already exists in number!")
         } else {
-            if let num = Double(runningNumber) {
-                basePrice = num
-            }
+            runningNumber += "."
+            outputLabel.text = runningNumber
         }
+        
+        if let num = Double(runningNumber) {
+            value = num
+        } else {
+            debugPrint("Error occured in converting string value!")
+        }
+        
     }
     
     @IBAction func onDividePressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.divide)
+        firstOperand.text = leftValStr
+        operatorLbl.text = CalcService.Operation.divide.rawValue
     }
     
     @IBAction func onMultiplyPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.multiply)
+        firstOperand.text = leftValStr
+        operatorLbl.text = CalcService.Operation.multiply.rawValue
     }
     
     @IBAction func onSubtractPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.subtract)
+        firstOperand.text = leftValStr
+        operatorLbl.text = CalcService.Operation.subtract.rawValue
     }
     
     @IBAction func onAddPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.add)
+        firstOperand.text = leftValStr
+        operatorLbl.text = CalcService.Operation.add.rawValue
+    }
+    
+    @IBAction func signPressed(_ sender: AnyObject) {
+        processOperation(CalcService.Operation.sign)
+    }
+    
+    @IBAction func percentPressed(_ sender: AnyObject) {
+        
+        if let num = Double(leftValStr), let num2 = Double(runningNumber) {
+            runningNumber = String(num * num2 * 0.01)
+            result = String((num * num2 * 0.01))
+            value = Double(result)!.round(to: 5)
+            outputLabel.text = String(value.formattedWithSeparator)
+            
+        } else if let num = Double(runningNumber) {
+            runningNumber = String(num * 0.01)
+            result = String((num * 0.01))
+            value = Double(result)!.round(to: 5)
+            outputLabel.text = String(value.formattedWithSeparator)
+        }
+        
     }
     
     @IBAction func onEqualPressed(_ sender: AnyObject) {
         processOperation(currentOperation)
         
-        //        if rightValStr != "" {
-        //            processOperation(currentOperation)
-        //        }
-        
-        outputLabel.text = String(basePrice.round(to: 2).formattedWithSeparator)
+        secondOperand.text = rightValStr
+        outputLabel.text = String(value.round(to: 5).formattedWithSeparator)
     }
     
     @IBAction func onClearPressed(_ sender: AnyObject) {
@@ -107,7 +137,10 @@ class ViewController: UIViewController {
         currentOperation = CalcService.Operation.empty
         
         outputLabel.text = "0"
-        basePrice = 0.0
+        firstOperand.text = ""
+        secondOperand.text = ""
+        operatorLbl.text = ""
+        value = 0.0
     }
     
     @IBAction func delTapped(_ sender: AnyObject) {
@@ -176,8 +209,8 @@ class ViewController: UIViewController {
                 }
                 
                 leftValStr = result
-                basePrice = Double(result)!.round(to: 2)
-                outputLabel.text = String(basePrice.formattedWithSeparator)
+                value = Double(result)!.round(to: 5)
+                outputLabel.text = String(value.formattedWithSeparator)
             }
             
             currentOperation = operation

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01A66B7321EB8D6600680BCB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A66B7221EB8D6600680BCB /* CustomButton.swift */; };
 		01AF349321EA9B9B00AE0705 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF349221EA9B9B00AE0705 /* AppDelegate.swift */; };
 		01AF349521EA9B9B00AE0705 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF349421EA9B9B00AE0705 /* ViewController.swift */; };
 		01AF349821EA9B9B00AE0705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01AF349621EA9B9B00AE0705 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01A66B7221EB8D6600680BCB /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		01AF348F21EA9B9B00AE0705 /* Portable calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Portable calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AF349221EA9B9B00AE0705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01AF349421EA9B9B00AE0705 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		01AF34C421EA9DB200AE0705 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				01A66B7221EB8D6600680BCB /* CustomButton.swift */,
 				01AF34D821EAB78C00AE0705 /* Material Design.swift */,
 			);
 			name = UI;
@@ -352,6 +355,7 @@
 				01AF349521EA9B9B00AE0705 /* ViewController.swift in Sources */,
 				01AF34DB21EAB78C00AE0705 /* ThousandSeparator.swift in Sources */,
 				01AF349321EA9B9B00AE0705 /* AppDelegate.swift in Sources */,
+				01A66B7321EB8D6600680BCB /* CustomButton.swift in Sources */,
 				01AF34DA21EAB78C00AE0705 /* CalculationService.swift in Sources */,
 				01AF34DC21EAB78C00AE0705 /* Material Design.swift in Sources */,
 			);

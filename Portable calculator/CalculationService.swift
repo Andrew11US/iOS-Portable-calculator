@@ -16,8 +16,6 @@ class CalcService {
         case multiply = "×"
         case subtract = "−"
         case add = "+"
-        case root = "√"
-        case percent = "%"
         case empty = ""
     }
     
@@ -57,22 +55,5 @@ class CalcService {
         }
     }
     
-    func root(numAstr: String) -> String? {
-        
-        if let numA = Double(numAstr) {
-            return "\(sqrt(numA))"
-        } else {
-            return nil
-        }
-    }
-    
-    func percent(numAstr: String, numBstr: String) -> String? {
-        
-        if let numA = Double(numAstr), let numB = Double(numBstr) {
-            return "\(numA + numB * 0.01)"
-        } else {
-            return nil
-        }
-    }
 }
 
