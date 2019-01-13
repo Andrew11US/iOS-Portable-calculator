@@ -24,6 +24,9 @@
 		01AF34D221EAA41100AE0705 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34CB21EAA41100AE0705 /* Lato-Black.ttf */; };
 		01AF34D321EAA41100AE0705 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34CB21EAA41100AE0705 /* Lato-Black.ttf */; };
 		01AF34D421EAA41100AE0705 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34CB21EAA41100AE0705 /* Lato-Black.ttf */; };
+		01AF34DA21EAB78C00AE0705 /* CalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF34D621EAB78C00AE0705 /* CalculationService.swift */; };
+		01AF34DB21EAB78C00AE0705 /* ThousandSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF34D721EAB78C00AE0705 /* ThousandSeparator.swift */; };
+		01AF34DC21EAB78C00AE0705 /* Material Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF34D821EAB78C00AE0705 /* Material Design.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		01AF34C921EAA41100AE0705 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		01AF34CA21EAA41100AE0705 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		01AF34CB21EAA41100AE0705 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		01AF34D621EAB78C00AE0705 /* CalculationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationService.swift; sourceTree = "<group>"; };
+		01AF34D721EAB78C00AE0705 /* ThousandSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThousandSeparator.swift; sourceTree = "<group>"; };
+		01AF34D821EAB78C00AE0705 /* Material Design.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material Design.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 				01AF34C721EA9DDF00AE0705 /* Model */,
 				01AF34C621EA9DCF00AE0705 /* Controllers */,
 				01AF34C821EAA3CD00AE0705 /* Fonts */,
+				01AF34DD21EABA9C00AE0705 /* Utilities */,
 				01AF34C521EA9DBA00AE0705 /* Support files */,
 			);
 			path = "Portable calculator";
@@ -152,6 +159,7 @@
 		01AF34C421EA9DB200AE0705 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				01AF34D821EAB78C00AE0705 /* Material Design.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -189,6 +197,15 @@
 				01AF34CA21EAA41100AE0705 /* Lato-Regular.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		01AF34DD21EABA9C00AE0705 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				01AF34D621EAB78C00AE0705 /* CalculationService.swift */,
+				01AF34D721EAB78C00AE0705 /* ThousandSeparator.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,7 +350,10 @@
 			files = (
 				01AF349B21EA9B9B00AE0705 /* Portable_calculator.xcdatamodeld in Sources */,
 				01AF349521EA9B9B00AE0705 /* ViewController.swift in Sources */,
+				01AF34DB21EAB78C00AE0705 /* ThousandSeparator.swift in Sources */,
 				01AF349321EA9B9B00AE0705 /* AppDelegate.swift in Sources */,
+				01AF34DA21EAB78C00AE0705 /* CalculationService.swift in Sources */,
+				01AF34DC21EAB78C00AE0705 /* Material Design.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
