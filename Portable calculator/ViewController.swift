@@ -38,6 +38,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         outputLabel.text = value.round(to: 5).formattedWithSeparator
+        self.setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     //******************************
