@@ -101,6 +101,9 @@
                                                 <state key="normal" title="C">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="onClearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w7Y-J0-pdx"/>
                                                 </connections>
@@ -111,6 +114,9 @@
                                                 <state key="normal" title="±">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="38"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="signPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sIu-6B-WpP"/>
                                                 </connections>
@@ -121,6 +127,9 @@
                                                 <state key="normal" title="%">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="percentPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R5C-kS-lcs"/>
                                                 </connections>
@@ -131,6 +140,9 @@
                                                 <state key="normal" title="÷">
                                                     <color key="titleColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="38"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="onDividePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M5X-LR-ROy"/>
                                                 </connections>
@@ -146,6 +158,9 @@
                                                 <state key="normal" title="7">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eqO-xS-aDz"/>
                                                 </connections>
@@ -156,6 +171,9 @@
                                                 <state key="normal" title="8">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g3s-jZ-w91"/>
                                                 </connections>
@@ -166,6 +184,9 @@
                                                 <state key="normal" title="9">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E58-kM-X2j"/>
                                                 </connections>
@@ -176,6 +197,9 @@
                                                 <state key="normal" title="×">
                                                     <color key="titleColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="38"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="onMultiplyPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vqV-6r-PRV"/>
                                                 </connections>
@@ -191,6 +215,9 @@
                                                 <state key="normal" title="4">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EIF-17-XlP"/>
                                                 </connections>
@@ -201,6 +228,9 @@
                                                 <state key="normal" title="5">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0FB-gD-IJH"/>
                                                 </connections>
@@ -211,6 +241,9 @@
                                                 <state key="normal" title="6">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x6A-z7-hgf"/>
                                                 </connections>
@@ -221,6 +254,9 @@
                                                 <state key="normal" title="−">
                                                     <color key="titleColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="38"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="onSubtractPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FsO-kX-8BT"/>
                                                 </connections>
@@ -236,6 +272,9 @@
                                                 <state key="normal" title="1">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Q1-SE-R1n"/>
                                                 </connections>
@@ -246,6 +285,9 @@
                                                 <state key="normal" title="2">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MnQ-C4-GEg"/>
                                                 </connections>
@@ -256,6 +298,9 @@
                                                 <state key="normal" title="3">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uRv-uf-Fsd"/>
                                                 </connections>
@@ -266,6 +311,9 @@
                                                 <state key="normal" title="+">
                                                     <color key="titleColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="38"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="onAddPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vSf-Dd-2U4"/>
                                                 </connections>
@@ -281,6 +329,9 @@
                                                 <state key="normal" title=".">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="dotTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Gw-ys-525"/>
                                                 </connections>
@@ -291,6 +342,9 @@
                                                 <state key="normal" title="0">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x6T-1j-QX0"/>
                                                 </connections>
@@ -301,6 +355,9 @@
                                                 <state key="normal" title="←">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="32"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="delTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dS6-ie-lHO"/>
                                                 </connections>
@@ -312,6 +369,9 @@
                                                 <state key="normal" title="=">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="64"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="onEqualPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zha-iN-LEc"/>
                                                 </connections>
@@ -323,12 +383,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.29803921568627451" green="0.31372549019607843" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="r6L-4F-KUc" secondAttribute="trailing" constant="50" id="6k0-xV-NNR"/>
+                            <constraint firstAttribute="trailing" secondItem="r6L-4F-KUc" secondAttribute="trailing" constant="50" id="6k0-xV-NNR">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4GN-lY-qVJ" secondAttribute="bottom" id="9F1-Bc-RRz"/>
                             <constraint firstItem="aWe-tW-WKO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FSj-F5-10g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4GN-lY-qVJ" secondAttribute="trailing" id="N10-Me-POX"/>
                             <constraint firstItem="r6L-4F-KUc" firstAttribute="top" secondItem="aWe-tW-WKO" secondAttribute="bottom" constant="35" id="PcN-3I-KP8"/>
-                            <constraint firstItem="r6L-4F-KUc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="bVh-NW-XUp"/>
+                            <constraint firstItem="r6L-4F-KUc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="bVh-NW-XUp">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
                             <constraint firstItem="4GN-lY-qVJ" firstAttribute="top" secondItem="r6L-4F-KUc" secondAttribute="bottom" id="iIU-29-JUu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aWe-tW-WKO" secondAttribute="trailing" constant="20" id="lt9-eZ-yAQ"/>
                             <constraint firstItem="4GN-lY-qVJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oCQ-72-EcB"/>
@@ -338,6 +402,7 @@
                     </view>
                     <connections>
                         <outlet property="addBtn" destination="WM1-0Y-YGb" id="whu-n2-MxI"/>
+                        <outlet property="bgView" destination="8bC-Xf-vdC" id="vjq-Wq-cql"/>
                         <outlet property="clearButton" destination="LH1-M4-4ym" id="l16-Bw-ar2"/>
                         <outlet property="delButton" destination="QMt-wL-sq9" id="U7o-GP-yd9"/>
                         <outlet property="divideBtn" destination="lfe-R7-s76" id="b1u-pa-f2y"/>

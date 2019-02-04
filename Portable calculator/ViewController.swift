@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondOperand: UILabel!
     @IBOutlet weak var operatorLbl: UILabel!
     @IBOutlet weak var modeBtn: UIButton!
+    @IBOutlet weak var bgView: UIView!
     
     // Variables for calculations
     var runningNumber = "0"
@@ -201,7 +202,7 @@ class ViewController: UIViewController {
             // A user selected an operator, but then selected another operator without first entering a number
             if runningNumber != "" {
                 rightValStr = runningNumber
-                runningNumber = ""
+                runningNumber = "0"
                 
                 if currentOperation == CalcService.Operation.multiply {
                     if let res = CalcService.shared.multiply(numAstr: leftValStr, numBstr: rightValStr) {
