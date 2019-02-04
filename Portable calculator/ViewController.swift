@@ -200,7 +200,7 @@ class ViewController: UIViewController {
         if currentOperation != CalcService.Operation.empty {
             
             // A user selected an operator, but then selected another operator without first entering a number
-            if runningNumber != "" {
+            if runningNumber != "0" {
                 rightValStr = runningNumber
                 runningNumber = "0"
                 
