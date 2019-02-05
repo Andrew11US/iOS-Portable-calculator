@@ -33,7 +33,7 @@
                                             <constraint firstAttribute="width" constant="50" id="JIx-pd-Nq9"/>
                                             <constraint firstAttribute="height" constant="50" id="txY-wK-Jub"/>
                                         </constraints>
-                                        <state key="normal" image="menu"/>
+                                        <state key="normal" image="menu-dots"/>
                                         <connections>
                                             <action selector="modeRevealTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U5T-w7-Cmg"/>
                                         </connections>
@@ -384,11 +384,67 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4To-jF-aTs" customClass="SpringView" customModule="Portable_calculator" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="120" width="300" height="100"/>
+                                <rect key="frame" x="37.5" y="80" width="300" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="c37-e0-5cw">
+                                        <rect key="frame" x="5" y="5" width="290" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJd-UB-AA5" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Dark">
+                                                    <color key="titleColor" red="0.90337103610000002" green="0.3123549223" blue="0.30170834060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="darkBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ln6-jx-iJy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUt-kV-RsG" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
+                                                <rect key="frame" x="120" y="0.0" width="50" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Light">
+                                                    <color key="titleColor" red="0.90337103610000002" green="0.3123549223" blue="0.30170834060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="lightBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aya-53-EC2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfj-Nv-fTJ" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
+                                                <rect key="frame" x="240" y="0.0" width="50" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="OLED">
+                                                    <color key="titleColor" red="0.90337103610000002" green="0.3123549223" blue="0.30170834060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="oledBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9JA-AD-zNQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="7CP-pw-UbA"/>
+                                    <constraint firstAttribute="trailing" secondItem="c37-e0-5cw" secondAttribute="trailing" constant="5" id="4Bn-jE-rdx"/>
+                                    <constraint firstAttribute="height" constant="60" id="7CP-pw-UbA"/>
                                     <constraint firstAttribute="width" constant="300" id="AqF-F2-4wj"/>
+                                    <constraint firstItem="c37-e0-5cw" firstAttribute="top" secondItem="4To-jF-aTs" secondAttribute="top" constant="5" id="QxZ-qQ-mns"/>
+                                    <constraint firstItem="c37-e0-5cw" firstAttribute="leading" secondItem="4To-jF-aTs" secondAttribute="leading" constant="5" id="ywJ-CK-mLu"/>
+                                    <constraint firstAttribute="bottom" secondItem="c37-e0-5cw" secondAttribute="bottom" constant="5" id="zyy-ic-oVP"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="YES"/>
@@ -405,7 +461,7 @@
                             <constraint firstItem="aWe-tW-WKO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FSj-F5-10g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4GN-lY-qVJ" secondAttribute="trailing" id="N10-Me-POX"/>
                             <constraint firstItem="r6L-4F-KUc" firstAttribute="top" secondItem="aWe-tW-WKO" secondAttribute="bottom" constant="35" id="PcN-3I-KP8"/>
-                            <constraint firstItem="4To-jF-aTs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="QlF-l6-J1c"/>
+                            <constraint firstItem="4To-jF-aTs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="PxV-0E-w5k"/>
                             <constraint firstItem="r6L-4F-KUc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="bVh-NW-XUp">
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
@@ -420,15 +476,18 @@
                         <outlet property="addBtn" destination="WM1-0Y-YGb" id="whu-n2-MxI"/>
                         <outlet property="bgView" destination="8bC-Xf-vdC" id="vjq-Wq-cql"/>
                         <outlet property="clearButton" destination="LH1-M4-4ym" id="l16-Bw-ar2"/>
-                        <outlet property="constraint" destination="QlF-l6-J1c" id="BCI-rV-jXg"/>
+                        <outlet property="constraint" destination="PxV-0E-w5k" id="nIC-2A-oYB"/>
+                        <outlet property="darkBtn" destination="qJd-UB-AA5" id="T3D-O9-kMN"/>
                         <outlet property="delButton" destination="QMt-wL-sq9" id="U7o-GP-yd9"/>
                         <outlet property="divideBtn" destination="lfe-R7-s76" id="b1u-pa-f2y"/>
                         <outlet property="dotButton" destination="G9m-no-Qaa" id="gF1-5p-83C"/>
                         <outlet property="firstOperand" destination="2Zt-VC-XKM" id="gOA-Ht-NxZ"/>
                         <outlet property="keyboard" destination="4GN-lY-qVJ" id="SU9-TX-U2I"/>
+                        <outlet property="lightBtn" destination="SUt-kV-RsG" id="nX1-zT-tHe"/>
                         <outlet property="modeBtn" destination="76W-lM-IK3" id="jwo-cF-kOQ"/>
                         <outlet property="modeView" destination="4To-jF-aTs" id="ayM-58-rwI"/>
                         <outlet property="multiplyBtn" destination="7v7-oo-8DA" id="m7d-9g-CeP"/>
+                        <outlet property="oledBtn" destination="Mfj-Nv-fTJ" id="DEt-LB-sa8"/>
                         <outlet property="operatorLbl" destination="oom-ls-Dq6" id="NDd-n1-JhL"/>
                         <outlet property="outputLabel" destination="WSS-q6-byb" id="ZmU-9m-598"/>
                         <outlet property="percentBtn" destination="d87-p1-xd8" id="NLk-a9-Wms"/>
@@ -443,6 +502,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="menu" width="30" height="25"/>
+        <image name="menu-dots" width="25" height="25"/>
     </resources>
 </document>

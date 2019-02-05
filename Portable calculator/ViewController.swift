@@ -29,6 +29,11 @@ class ViewController: UIViewController {
     // Animated view appearance
     @IBOutlet weak var modeBtn: UIButton!
     @IBOutlet weak var modeView: SpringView!
+    
+    @IBOutlet weak var darkBtn: CustomButton!
+    @IBOutlet weak var lightBtn: CustomButton!
+    @IBOutlet weak var oledBtn: CustomButton!
+    
     @IBOutlet weak var constraint: NSLayoutConstraint!
     var viewAppeared = false
     
@@ -44,6 +49,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        modeView.layer.cornerRadius = 30
         
         outputLabel.text = runningNumber
         self.setNeedsStatusBarAppearanceUpdate()
@@ -272,6 +279,18 @@ class ViewController: UIViewController {
         animateView()
     }
     
+    @IBAction func darkBtnTapped(_ sender: CustomButton) {
+        bgView.layer.backgroundColor = UIColor(hex: "#4C505E").cgColor
+    }
+    
+    @IBAction func lightBtnTapped(_ sender: CustomButton) {
+        bgView.layer.backgroundColor = UIColor.white.cgColor
+    }
+    
+    @IBAction func oledBtnTapped(_ sender: CustomButton) {
+        bgView.layer.backgroundColor = UIColor.black.cgColor
+    }
+    
 }
 
 extension ViewController {
@@ -291,17 +310,17 @@ extension ViewController {
     }
     
     func setForAppear() {
-        modeView.duration = 0.7
+        modeView.duration = 1.0
         modeView.animation = Spring.AnimationPreset.SlideDown.rawValue
         modeView.curve = Spring.AnimationCurve.EaseIn.rawValue
-        constraint.constant = 100
+        constraint.constant = 60
     }
     
     func setForDisappear() {
-        modeView.duration = 0.7
+        modeView.duration = 1.0
         modeView.animation = Spring.AnimationPreset.SlideUp.rawValue
         modeView.curve = Spring.AnimationCurve.EaseIn.rawValue
-        constraint.constant = -200
+        constraint.constant = -240
     }
     
     func hideModeView() {
