@@ -32,24 +32,22 @@ class ViewController: UIViewController {
     var leftValStr = ""
     var rightValStr = ""
     var result = ""
-//    var value = 0.0
     var currentOperation = CalcService.Operation.empty
+    
+    // Feedback generator for haptic touch
+    let impact = UIImpactFeedbackGenerator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        outputLabel.text = value.round(to: 5).formattedWithSeparator
         outputLabel.text = runningNumber
         self.setNeedsStatusBarAppearanceUpdate()
     }
     
+    // Change bar style to white
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
-    //******************************
-    //***Calculator functionality***
-    //******************************
     
     @IBAction func numberPressed(_ btn: UIButton!) {
         
@@ -62,10 +60,6 @@ class ViewController: UIViewController {
         }
         
         outputLabel.text = runningNumber
-        
-//        if let num = Double(runningNumber) {
-//            value = num
-//        }
     }
     
     @IBAction func dotTapped(_ btn: UIButton!) {
@@ -76,37 +70,34 @@ class ViewController: UIViewController {
             runningNumber += "."
             outputLabel.text = runningNumber
         }
-        
-//        if let num = Double(runningNumber) {
-//            value = num
-//        } else {
-//            debugPrint("Error occured in converting string value!")
-//        }
-        
     }
     
     @IBAction func onDividePressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.divide)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.divide.rawValue
+        impact.impactOccurred()
     }
     
     @IBAction func onMultiplyPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.multiply)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.multiply.rawValue
+        impact.impactOccurred()
     }
     
     @IBAction func onSubtractPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.subtract)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.subtract.rawValue
+        impact.impactOccurred()
     }
     
     @IBAction func onAddPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.add)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.add.rawValue
+        impact.impactOccurred()
     }
     
     @IBAction func signPressed(_ sender: AnyObject) {
@@ -119,20 +110,7 @@ class ViewController: UIViewController {
             result = "0"
             print("Result is zero")
         }
-        
-//        if let num = Double(runningNumber) {
-//            if num != 0 {
-//                runningNumber = String(-num)
-//                result = String(-num)
-//                value = Double(result)!.round(to: 5)
-//                outputLabel.text = String(value.formattedWithSeparator)
-//            } else {
-//                runningNumber = "0"
-//                result = "0"
-//                value = Double(result)!.round(to: 5)
-//                outputLabel.text = String(value.formattedWithSeparator)
-//            }
-//        }
+        impact.impactOccurred()
     }
     
     @IBAction func percentPressed(_ sender: AnyObject) {
@@ -146,6 +124,7 @@ class ViewController: UIViewController {
                 print("Result is zero")
             }
         } else {
+            
             if let res = CalcService.shared.percentSingle(base: runningNumber) {
                 runningNumber = res
                 outputLabel.text = runningNumber
@@ -154,22 +133,7 @@ class ViewController: UIViewController {
                 print("Result is zero")
             }
         }
-        
-        
-//        if let num = Double(leftValStr), let num2 = Double(runningNumber) {
-////            runningNumber = String(num * num2 * 0.01)
-////            result = String(num * num2 * 0.01)
-////            value = Double(result)!.round(to: 5)
-////            outputLabel.text = String(value.formattedWithSeparator)
-//
-//
-//        } else if let num = Double(runningNumber) {
-//            runningNumber = String(num * 0.01)
-//            result = String(num * 0.01)
-//            value = Double(result)!.round(to: 5)
-//            outputLabel.text = String(value.formattedWithSeparator)
-//        }
-        
+        impact.impactOccurred()
     }
     
     @IBAction func onEqualPressed(_ sender: AnyObject) {
@@ -179,12 +143,8 @@ class ViewController: UIViewController {
             
             secondOperand.text = CalcService.shared.trimZeroForInt(strNumber: rightValStr)
             outputLabel.text = CalcService.shared.trimZeroForInt(strNumber: result)
-//            outputLabel.text = String(value.round(to: 5).formattedWithSeparator)
         }
-        
-//        processOperation(currentOperation)
-//        secondOperand.text = rightValStr
-//        outputLabel.text = String(value.round(to: 5).formattedWithSeparator)
+        impact.impactOccurred()
     }
     
     @IBAction func onClearPressed(_ sender: AnyObject) {
@@ -199,7 +159,7 @@ class ViewController: UIViewController {
         firstOperand.text = ""
         secondOperand.text = ""
         operatorLbl.text = ""
-//        value = 0.0
+        impact.impactOccurred()
     }
     
     @IBAction func delTapped(_ sender: AnyObject) {
@@ -278,7 +238,7 @@ class ViewController: UIViewController {
             
         } else {
             
-            // This is the first time an operator has been pressed
+            // This is the first time operator was pressed
             leftValStr = runningNumber
             rightValStr = "0"
             runningNumber = "0"
