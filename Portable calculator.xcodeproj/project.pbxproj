@@ -184,7 +184,7 @@
 				01AF34C821EAA3CD00AE0705 /* Fonts */,
 				01AF34DD21EABA9C00AE0705 /* Utilities */,
 				01AF34C521EA9DBA00AE0705 /* Support files */,
-				01D0A8E8220A17C000BAA29B /* Resources */,
+				01D0A8E9220A17FC00BAA29B /* Spring */,
 			);
 			path = "Portable calculator";
 			sourceTree = "<group>";
@@ -267,14 +267,6 @@
 				01AF34D721EAB78C00AE0705 /* ThousandSeparator.swift */,
 			);
 			name = Utilities;
-			sourceTree = "<group>";
-		};
-		01D0A8E8220A17C000BAA29B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				01D0A8E9220A17FC00BAA29B /* Spring */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		01D0A8E9220A17FC00BAA29B /* Spring */ = {

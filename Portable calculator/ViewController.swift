@@ -24,8 +24,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var firstOperand: UILabel!
     @IBOutlet weak var secondOperand: UILabel!
     @IBOutlet weak var operatorLbl: UILabel!
-    @IBOutlet weak var modeBtn: UIButton!
     @IBOutlet weak var bgView: UIView!
+    
+    // Animated view appearance
+    @IBOutlet weak var modeBtn: UIButton!
+    @IBOutlet weak var modeView: SpringView!
+    @IBOutlet weak var constraint: NSLayoutConstraint!
+    var viewAppeared = false
     
     // Variables for calculations
     var runningNumber = "0"
@@ -49,6 +54,11 @@ class ViewController: UIViewController {
         return .lightContent
     }
     
+    // Hide modeView when tap outside the view
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        hideModeView()
+    }
+    
     @IBAction func numberPressed(_ btn: UIButton!) {
         
         if runningNumber != "0" {
@@ -60,6 +70,7 @@ class ViewController: UIViewController {
         }
         
         outputLabel.text = runningNumber
+        hideModeView()
     }
     
     @IBAction func dotTapped(_ btn: UIButton!) {
@@ -70,6 +81,7 @@ class ViewController: UIViewController {
             runningNumber += "."
             outputLabel.text = runningNumber
         }
+        hideModeView()
     }
     
     @IBAction func onDividePressed(_ sender: AnyObject) {
@@ -77,6 +89,7 @@ class ViewController: UIViewController {
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.divide.rawValue
         impact.impactOccurred()
+        hideModeView()
     }
     
     @IBAction func onMultiplyPressed(_ sender: AnyObject) {
@@ -84,6 +97,7 @@ class ViewController: UIViewController {
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.multiply.rawValue
         impact.impactOccurred()
+        hideModeView()
     }
     
     @IBAction func onSubtractPressed(_ sender: AnyObject) {
@@ -91,6 +105,7 @@ class ViewController: UIViewController {
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.subtract.rawValue
         impact.impactOccurred()
+        hideModeView()
     }
     
     @IBAction func onAddPressed(_ sender: AnyObject) {
@@ -98,6 +113,7 @@ class ViewController: UIViewController {
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.add.rawValue
         impact.impactOccurred()
+        hideModeView()
     }
     
     @IBAction func signPressed(_ sender: AnyObject) {
@@ -111,6 +127,7 @@ class ViewController: UIViewController {
             print("Result is zero")
         }
         impact.impactOccurred()
+        hideModeView()
     }
     
     @IBAction func percentPressed(_ sender: AnyObject) {
@@ -134,6 +151,7 @@ class ViewController: UIViewController {
             }
         }
         impact.impactOccurred()
+        hideModeView()
     }
     
     @IBAction func onEqualPressed(_ sender: AnyObject) {
@@ -145,6 +163,7 @@ class ViewController: UIViewController {
             outputLabel.text = CalcService.shared.trimZeroForInt(strNumber: result)
         }
         impact.impactOccurred()
+        hideModeView()
     }
     
     @IBAction func onClearPressed(_ sender: AnyObject) {
@@ -160,6 +179,7 @@ class ViewController: UIViewController {
         secondOperand.text = ""
         operatorLbl.text = ""
         impact.impactOccurred()
+        hideModeView()
     }
     
     @IBAction func delTapped(_ sender: AnyObject) {
@@ -183,6 +203,7 @@ class ViewController: UIViewController {
         if runningNumber == "0" {
             outputLabel.text = "0"
         }
+        hideModeView()
     }
     
     func processOperation(_ operation: CalcService.Operation) {
@@ -226,11 +247,11 @@ class ViewController: UIViewController {
                     }
                 }
                 
-//                leftValStr = result
+                //                leftValStr = result
                 leftValStr = CalcService.shared.trimZeroForInt(strNumber: result)
                 outputLabel.text = CalcService.shared.trimZeroForInt(strNumber: result)
-//                value = Double(result)!.round(to: 5)
-//                outputLabel.text = String(value.formattedWithSeparator)
+                //                value = Double(result)!.round(to: 5)
+                //                outputLabel.text = String(value.formattedWithSeparator)
             }
             
             currentOperation = operation
@@ -245,7 +266,49 @@ class ViewController: UIViewController {
             currentOperation = operation
         }
     }
+    
+    @IBAction func modeRevealTapped(_ sender: UIButton) {
+        impact.impactOccurred()
+        animateView()
+    }
+    
+}
 
-
+extension ViewController {
+    
+    func animateView() {
+        if viewAppeared {
+            setForDisappear()
+            viewAppeared = false
+        } else {
+            setForAppear()
+            viewAppeared = true
+        }
+        
+        //  viewAppeared = viewAppeared ? false : true
+        
+        modeView.animate()
+    }
+    
+    func setForAppear() {
+        modeView.duration = 0.7
+        modeView.animation = Spring.AnimationPreset.SlideDown.rawValue
+        modeView.curve = Spring.AnimationCurve.EaseIn.rawValue
+        constraint.constant = 100
+    }
+    
+    func setForDisappear() {
+        modeView.duration = 0.7
+        modeView.animation = Spring.AnimationPreset.SlideUp.rawValue
+        modeView.curve = Spring.AnimationCurve.EaseIn.rawValue
+        constraint.constant = -200
+    }
+    
+    func hideModeView() {
+        if viewAppeared {
+            animateView()
+        }
+    }
+    
 }
 
