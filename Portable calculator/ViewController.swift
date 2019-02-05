@@ -110,36 +110,64 @@ class ViewController: UIViewController {
     
     @IBAction func signPressed(_ sender: AnyObject) {
         
-        if let num = Double(runningNumber) {
-            if num != 0 {
-                runningNumber = String(-num)
-                result = String(-num)
-                value = Double(result)!.round(to: 5)
-                outputLabel.text = String(value.formattedWithSeparator)
-            } else {
-                runningNumber = "0"
-                result = "0"
-                value = Double(result)!.round(to: 5)
-                outputLabel.text = String(value.formattedWithSeparator)
-            }
-            
+        if let res = CalcService.shared.changeSign(strNum: runningNumber) {
+            result = res
+            runningNumber = res
+            outputLabel.text = result
+        } else {
+            result = "0"
+            print("Result is zero")
         }
+        
+//        if let num = Double(runningNumber) {
+//            if num != 0 {
+//                runningNumber = String(-num)
+//                result = String(-num)
+//                value = Double(result)!.round(to: 5)
+//                outputLabel.text = String(value.formattedWithSeparator)
+//            } else {
+//                runningNumber = "0"
+//                result = "0"
+//                value = Double(result)!.round(to: 5)
+//                outputLabel.text = String(value.formattedWithSeparator)
+//            }
+//        }
     }
     
     @IBAction func percentPressed(_ sender: AnyObject) {
         
-        if let num = Double(leftValStr), let num2 = Double(runningNumber) {
-            runningNumber = String(num * num2 * 0.01)
-            result = String(num * num2 * 0.01)
-            value = Double(result)!.round(to: 5)
-            outputLabel.text = String(value.formattedWithSeparator)
-            
-        } else if let num = Double(runningNumber) {
-            runningNumber = String(num * 0.01)
-            result = String(num * 0.01)
-            value = Double(result)!.round(to: 5)
-            outputLabel.text = String(value.formattedWithSeparator)
+        if leftValStr != "" {
+            if let res = CalcService.shared.percentDouble(base: leftValStr, value: runningNumber) {
+                runningNumber = res
+                outputLabel.text = runningNumber
+            } else {
+                result = "0"
+                print("Result is zero")
+            }
+        } else {
+            if let res = CalcService.shared.percentSingle(base: runningNumber) {
+                runningNumber = res
+                outputLabel.text = runningNumber
+            } else {
+                result = "0"
+                print("Result is zero")
+            }
         }
+        
+        
+//        if let num = Double(leftValStr), let num2 = Double(runningNumber) {
+////            runningNumber = String(num * num2 * 0.01)
+////            result = String(num * num2 * 0.01)
+////            value = Double(result)!.round(to: 5)
+////            outputLabel.text = String(value.formattedWithSeparator)
+//
+//
+//        } else if let num = Double(runningNumber) {
+//            runningNumber = String(num * 0.01)
+//            result = String(num * 0.01)
+//            value = Double(result)!.round(to: 5)
+//            outputLabel.text = String(value.formattedWithSeparator)
+//        }
         
     }
     
@@ -199,7 +227,6 @@ class ViewController: UIViewController {
         
         if currentOperation != CalcService.Operation.empty {
             
-            // A user selected an operator, but then selected another operator without first entering a number
             if runningNumber != "0" {
                 rightValStr = runningNumber
                 runningNumber = "0"
