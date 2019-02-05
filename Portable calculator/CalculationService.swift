@@ -89,7 +89,10 @@ struct CalcService {
     }
     
     func trimZeroForInt(strNumber: String) -> String {
-        if strNumber.hasSuffix(".0") {
+        if strNumber.hasSuffix(".") {
+            print(strNumber.dropLast(1))
+            return String(strNumber.dropLast(1))
+        } else if strNumber.hasSuffix(".0") {
             print(strNumber.dropLast(2))
             return String(strNumber.dropLast(2))
         } else {

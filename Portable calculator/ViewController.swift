@@ -95,7 +95,6 @@ class ViewController: UIViewController {
         processOperation(CalcService.Operation.divide)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.divide.rawValue
-        impact.impactOccurred()
         hideModeView()
     }
     
@@ -103,7 +102,6 @@ class ViewController: UIViewController {
         processOperation(CalcService.Operation.multiply)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.multiply.rawValue
-        impact.impactOccurred()
         hideModeView()
     }
     
@@ -111,7 +109,6 @@ class ViewController: UIViewController {
         processOperation(CalcService.Operation.subtract)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.subtract.rawValue
-        impact.impactOccurred()
         hideModeView()
     }
     
@@ -119,7 +116,6 @@ class ViewController: UIViewController {
         processOperation(CalcService.Operation.add)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.add.rawValue
-        impact.impactOccurred()
         hideModeView()
     }
     
@@ -133,7 +129,6 @@ class ViewController: UIViewController {
             result = "0"
             print("Result is zero")
         }
-        impact.impactOccurred()
         hideModeView()
     }
     
@@ -157,7 +152,6 @@ class ViewController: UIViewController {
                 print("Result is zero")
             }
         }
-        impact.impactOccurred()
         hideModeView()
     }
     
@@ -216,8 +210,8 @@ class ViewController: UIViewController {
     func processOperation(_ operation: CalcService.Operation) {
         
         if currentOperation != CalcService.Operation.empty {
-            
-            if runningNumber != "0" {
+            // Possible bug!!!
+            if runningNumber != "" {
                 rightValStr = runningNumber
                 runningNumber = "0"
                 
@@ -281,14 +275,41 @@ class ViewController: UIViewController {
     
     @IBAction func darkBtnTapped(_ sender: CustomButton) {
         bgView.layer.backgroundColor = UIColor(hex: "#4C505E").cgColor
+        outputLabel.textColor = UIColor.white
+        firstOperand.textColor = UIColor.white
+        secondOperand.textColor = UIColor.white
+        clearButton.setTitleColor(UIColor.white, for: .normal)
+        signBtn.setTitleColor(UIColor.white, for: .normal)
+        percentBtn.setTitleColor(UIColor.white, for: .normal)
+        modeBtn.setImage(UIImage(named: "menu"), for: .normal)
+        modeView.layer.backgroundColor = UIColor.white.cgColor
+        impact.impactOccurred()
     }
     
     @IBAction func lightBtnTapped(_ sender: CustomButton) {
         bgView.layer.backgroundColor = UIColor.white.cgColor
+        outputLabel.textColor = UIColor(hex: "#4C505E")
+        firstOperand.textColor = UIColor(hex: "#4C505E")
+        secondOperand.textColor = UIColor(hex: "#4C505E")
+        clearButton.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
+        signBtn.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
+        percentBtn.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
+        modeBtn.setImage(UIImage(named: "menuDark"), for: .normal)
+        modeView.layer.backgroundColor = UIColor(hex: "#4C505E").cgColor
+        impact.impactOccurred()
     }
     
     @IBAction func oledBtnTapped(_ sender: CustomButton) {
         bgView.layer.backgroundColor = UIColor.black.cgColor
+        outputLabel.textColor = UIColor.white
+        firstOperand.textColor = UIColor.white
+        secondOperand.textColor = UIColor.white
+        clearButton.setTitleColor(UIColor.white, for: .normal)
+        signBtn.setTitleColor(UIColor.white, for: .normal)
+        percentBtn.setTitleColor(UIColor.white, for: .normal)
+        modeBtn.setImage(UIImage(named: "menu"), for: .normal)
+        modeView.layer.backgroundColor = UIColor.white.cgColor
+        impact.impactOccurred()
     }
     
 }

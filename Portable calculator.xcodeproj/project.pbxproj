@@ -56,6 +56,7 @@
 		01D0A921220A17FC00BAA29B /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D0A904220A17FC00BAA29B /* UnwindSegue.swift */; };
 		01D0A922220A17FC00BAA29B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D0A905220A17FC00BAA29B /* LoadingView.swift */; };
 		01D0A924220A17FC00BAA29B /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D0A907220A17FC00BAA29B /* AsyncImageView.swift */; };
+		01E2C24A220A44160050C889 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2C249220A44160050C889 /* GlobalData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		01D0A904220A17FC00BAA29B /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		01D0A905220A17FC00BAA29B /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		01D0A907220A17FC00BAA29B /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		01E2C249220A44160050C889 /* GlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +267,7 @@
 			children = (
 				01AF34D621EAB78C00AE0705 /* CalculationService.swift */,
 				01AF34D721EAB78C00AE0705 /* ThousandSeparator.swift */,
+				01E2C249220A44160050C889 /* GlobalData.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				01D0A90C220A17FC00BAA29B /* ImageLoader.swift in Sources */,
 				01AF349521EA9B9B00AE0705 /* ViewController.swift in Sources */,
 				01D0A90B220A17FC00BAA29B /* TransitionZoom.swift in Sources */,
+				01E2C24A220A44160050C889 /* GlobalData.swift in Sources */,
 				01D0A90D220A17FC00BAA29B /* Spring.swift in Sources */,
 				01D0A917220A17FC00BAA29B /* DesignableButton.swift in Sources */,
 				01D0A924220A17FC00BAA29B /* AsyncImageView.swift in Sources */,
