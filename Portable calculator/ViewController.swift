@@ -223,7 +223,6 @@ class ViewController: UIViewController {
     func processOperation(_ operation: CalcService.Operation) {
         
         if currentOperation != CalcService.Operation.empty {
-            // Possible bug!!!
             if runningNumber != "" {
                 rightValStr = runningNumber
                 runningNumber = "0"

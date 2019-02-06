@@ -25,10 +25,10 @@
 		01AF34D221EAA41100AE0705 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34CB21EAA41100AE0705 /* Lato-Black.ttf */; };
 		01AF34D321EAA41100AE0705 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34CB21EAA41100AE0705 /* Lato-Black.ttf */; };
 		01AF34D421EAA41100AE0705 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01AF34CB21EAA41100AE0705 /* Lato-Black.ttf */; };
-		01AF34DA21EAB78C00AE0705 /* CalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF34D621EAB78C00AE0705 /* CalculationService.swift */; };
 		01AF34DB21EAB78C00AE0705 /* ThousandSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF34D721EAB78C00AE0705 /* ThousandSeparator.swift */; };
 		01AF34DC21EAB78C00AE0705 /* Material Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AF34D821EAB78C00AE0705 /* Material Design.swift */; };
-		01B6D752220B93F400AA922C /* CalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6D751220B93F400AA922C /* CalculationService.swift */; };
+		01B6D757220B958500AA922C /* CalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6D756220B958500AA922C /* CalculationService.swift */; };
+		01B6D758220B958500AA922C /* CalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6D756220B958500AA922C /* CalculationService.swift */; };
 		01C717C4220B770200F64F88 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C717C2220B770200F64F88 /* Interface.storyboard */; };
 		01C717C6220B770300F64F88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C717C5220B770300F64F88 /* Assets.xcassets */; };
 		01C717CD220B770400F64F88 /* Calculator Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 01C717CC220B770400F64F88 /* Calculator Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -142,10 +142,9 @@
 		01AF34C921EAA41100AE0705 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		01AF34CA21EAA41100AE0705 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		01AF34CB21EAA41100AE0705 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
-		01AF34D621EAB78C00AE0705 /* CalculationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationService.swift; sourceTree = "<group>"; };
 		01AF34D721EAB78C00AE0705 /* ThousandSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThousandSeparator.swift; sourceTree = "<group>"; };
 		01AF34D821EAB78C00AE0705 /* Material Design.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material Design.swift"; sourceTree = "<group>"; };
-		01B6D751220B93F400AA922C /* CalculationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculationService.swift; path = "Portable calculator/CalculationService.swift"; sourceTree = SOURCE_ROOT; };
+		01B6D756220B958500AA922C /* CalculationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationService.swift; sourceTree = "<group>"; };
 		01C717C0220B770200F64F88 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C717C3220B770200F64F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		01C717C5220B770300F64F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -333,7 +332,7 @@
 		01AF34DD21EABA9C00AE0705 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				01AF34D621EAB78C00AE0705 /* CalculationService.swift */,
+				01B6D756220B958500AA922C /* CalculationService.swift */,
 				01AF34D721EAB78C00AE0705 /* ThousandSeparator.swift */,
 				01E2C249220A44160050C889 /* GlobalData.swift */,
 			);
@@ -353,7 +352,6 @@
 		01C717D0220B770400F64F88 /* Calculator Extension */ = {
 			isa = PBXGroup;
 			children = (
-				01B6D751220B93F400AA922C /* CalculationService.swift */,
 				01C717D1220B770400F64F88 /* InterfaceController.swift */,
 				01C717D3220B770400F64F88 /* ExtensionDelegate.swift */,
 				01C717D5220B770400F64F88 /* Assets.xcassets */,
@@ -620,6 +618,7 @@
 				01D0A918220A17FC00BAA29B /* SpringTextField.swift in Sources */,
 				01AF349321EA9B9B00AE0705 /* AppDelegate.swift in Sources */,
 				01D0A909220A17FC00BAA29B /* KeyboardLayoutConstraint.swift in Sources */,
+				01B6D757220B958500AA922C /* CalculationService.swift in Sources */,
 				01D0A90E220A17FC00BAA29B /* SpringImageView.swift in Sources */,
 				01D0A90F220A17FC00BAA29B /* DesignableLabel.swift in Sources */,
 				01D0A90A220A17FC00BAA29B /* TransitionManager.swift in Sources */,
@@ -632,7 +631,6 @@
 				01D0A921220A17FC00BAA29B /* UnwindSegue.swift in Sources */,
 				01D0A91B220A17FC00BAA29B /* AsyncButton.swift in Sources */,
 				01D0A915220A17FC00BAA29B /* Misc.swift in Sources */,
-				01AF34DA21EAB78C00AE0705 /* CalculationService.swift in Sources */,
 				01AF34DC21EAB78C00AE0705 /* Material Design.swift in Sources */,
 				01D0A920220A17FC00BAA29B /* SpringAnimation.swift in Sources */,
 			);
@@ -659,7 +657,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C717D4220B770400F64F88 /* ExtensionDelegate.swift in Sources */,
-				01B6D752220B93F400AA922C /* CalculationService.swift in Sources */,
+				01B6D758220B958500AA922C /* CalculationService.swift in Sources */,
 				01C717D2220B770400F64F88 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
