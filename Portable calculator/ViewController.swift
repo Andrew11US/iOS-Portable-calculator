@@ -54,6 +54,7 @@ class ViewController: UIViewController {
         retreiveDataFromDefaults()
         
         modeView.layer.cornerRadius = 30
+        modeBtn.layer.cornerRadius = 25
         outputLabel.text = runningNumber
         
         checkForColorScheme()
@@ -372,9 +373,13 @@ extension ViewController {
         clearButton.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
         signBtn.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
         percentBtn.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
-        modeBtn.setImage(UIImage(named: "menuDark"), for: .normal)
+        modeBtn.setImage(UIImage(named: "Light-menu"), for: .normal)
         modeView.layer.backgroundColor = UIColor(hex: "#4C505E").cgColor
         currentScheme = .light
+        
+        oledBtn.setImage(UIImage(named: "OLED"), for: .normal)
+        lightBtn.setImage(UIImage(named: "sLight"), for: .normal)
+        darkBtn.setImage(UIImage(named: "Dark"), for: .normal)
         
         UserDefaults.standard.set(currentScheme.rawValue, forKey: "colorScheme")
         debugPrint(UserDefaults.standard.value(forKey: "colorScheme") ?? "No data!")
@@ -396,9 +401,13 @@ extension ViewController {
         clearButton.setTitleColor(UIColor.white, for: .normal)
         signBtn.setTitleColor(UIColor.white, for: .normal)
         percentBtn.setTitleColor(UIColor.white, for: .normal)
-        modeBtn.setImage(UIImage(named: "menu"), for: .normal)
+        modeBtn.setImage(UIImage(named: "Dark-menu"), for: .normal)
         modeView.layer.backgroundColor = UIColor.white.cgColor
         currentScheme = .dark
+        
+        oledBtn.setImage(UIImage(named: "OLED"), for: .normal)
+        lightBtn.setImage(UIImage(named: "Light"), for: .normal)
+        darkBtn.setImage(UIImage(named: "sDark"), for: .normal)
         
         UserDefaults.standard.set(currentScheme.rawValue, forKey: "colorScheme")
         debugPrint(UserDefaults.standard.value(forKey: "colorScheme") ?? "No data!")
@@ -420,13 +429,13 @@ extension ViewController {
         clearButton.setTitleColor(UIColor.white, for: .normal)
         signBtn.setTitleColor(UIColor.white, for: .normal)
         percentBtn.setTitleColor(UIColor.white, for: .normal)
-        modeBtn.setImage(UIImage(named: "menu"), for: .normal)
+        modeBtn.setImage(UIImage(named: "OLED-menu"), for: .normal)
         modeView.layer.backgroundColor = UIColor.white.cgColor
         currentScheme = .oled
         
-        oledBtn.layer.backgroundColor = UIColor.blue.cgColor
-        lightBtn.layer.backgroundColor = UIColor.clear.cgColor
-        darkBtn.layer.backgroundColor = UIColor.clear.cgColor
+        oledBtn.setImage(UIImage(named: "sOLED"), for: .normal)
+        lightBtn.setImage(UIImage(named: "Light"), for: .normal)
+        darkBtn.setImage(UIImage(named: "Dark"), for: .normal)
         
         UserDefaults.standard.set(currentScheme.rawValue, forKey: "colorScheme")
         debugPrint(UserDefaults.standard.value(forKey: "colorScheme") ?? "No data!")

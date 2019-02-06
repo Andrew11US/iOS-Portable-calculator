@@ -27,13 +27,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aWe-tW-WKO">
                                 <rect key="frame" x="20" y="25" width="335" height="230"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76W-lM-IK3">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76W-lM-IK3">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="JIx-pd-Nq9"/>
                                             <constraint firstAttribute="height" constant="50" id="txY-wK-Jub"/>
                                         </constraints>
-                                        <state key="normal" image="menu"/>
+                                        <state key="normal" image="Dark-menu"/>
                                         <connections>
                                             <action selector="modeRevealTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U5T-w7-Cmg"/>
                                         </connections>
@@ -389,10 +389,9 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="c37-e0-5cw">
                                         <rect key="frame" x="5" y="5" width="290" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJd-UB-AA5" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJd-UB-AA5" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Dark">
+                                                <state key="normal" image="Dark">
                                                     <color key="titleColor" red="0.90337103610000002" green="0.3123549223" blue="0.30170834060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -404,10 +403,9 @@
                                                     <action selector="darkBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ln6-jx-iJy"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUt-kV-RsG" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUt-kV-RsG" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
                                                 <rect key="frame" x="120" y="0.0" width="50" height="50"/>
-                                                <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Light">
+                                                <state key="normal" image="Light">
                                                     <color key="titleColor" red="0.90337103610000002" green="0.3123549223" blue="0.30170834060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -419,10 +417,9 @@
                                                     <action selector="lightBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aya-53-EC2"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfj-Nv-fTJ" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfj-Nv-fTJ" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
                                                 <rect key="frame" x="240" y="0.0" width="50" height="50"/>
-                                                <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="OLED">
+                                                <state key="normal" image="OLED">
                                                     <color key="titleColor" red="0.90337103610000002" green="0.3123549223" blue="0.30170834060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -502,6 +499,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="menu" width="30" height="25"/>
+        <image name="Dark" width="50" height="50"/>
+        <image name="Dark-menu" width="150" height="150"/>
+        <image name="Light" width="50" height="50"/>
+        <image name="OLED" width="50" height="50"/>
     </resources>
 </document>
