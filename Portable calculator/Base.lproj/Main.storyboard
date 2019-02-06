@@ -383,7 +383,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4To-jF-aTs" customClass="SpringView" customModule="Portable_calculator" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4To-jF-aTs" customClass="SpringView" customModule="Portable_calculator" customModuleProvider="target">
                                 <rect key="frame" x="37.5" y="80" width="300" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="c37-e0-5cw">
