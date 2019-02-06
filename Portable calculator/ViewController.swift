@@ -183,7 +183,7 @@ class ViewController: UIViewController {
     
     @IBAction func onClearPressed(_ sender: AnyObject) {
         
-        runningNumber = "0"
+        runningNumber = ""
         leftValStr = ""
         rightValStr = ""
         result = ""
@@ -204,14 +204,15 @@ class ViewController: UIViewController {
             outputLabel.text = runningNumber
             
             if runningNumber == "" {
-                runningNumber = "0"
-                outputLabel.text = runningNumber
+                runningNumber = ""
+//                outputLabel.text = runningNumber
+                outputLabel.text = "0"
             }
             
         } else {
             
-            runningNumber = "0"
-            outputLabel.text = ""
+            runningNumber = ""
+            outputLabel.text = "0"
         }
         
         if runningNumber == "0" {

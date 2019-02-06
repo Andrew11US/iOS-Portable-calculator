@@ -32,7 +32,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var nineBtn: WKInterfaceButton!
     
     // Variables for calculations
-    var runningNumber = "0"
+    var runningNumber = ""
     var leftValStr = ""
     var rightValStr = ""
     var result = ""
@@ -56,7 +56,7 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func eraceOnTap(_ sender: Any) {
         print("Eraced!")
-        runningNumber = "0"
+        runningNumber = ""
         leftValStr = ""
         rightValStr = ""
         result = ""
