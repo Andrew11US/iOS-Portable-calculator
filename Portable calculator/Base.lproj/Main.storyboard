@@ -33,7 +33,7 @@
                                             <constraint firstAttribute="width" constant="50" id="JIx-pd-Nq9"/>
                                             <constraint firstAttribute="height" constant="50" id="txY-wK-Jub"/>
                                         </constraints>
-                                        <state key="normal" image="menu-dots"/>
+                                        <state key="normal" image="menu"/>
                                         <connections>
                                             <action selector="modeRevealTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U5T-w7-Cmg"/>
                                         </connections>
@@ -502,6 +502,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="menu-dots" width="25" height="25"/>
+        <image name="menu" width="30" height="25"/>
     </resources>
 </document>

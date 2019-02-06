@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var constraint: NSLayoutConstraint!
     var viewAppeared = false
+    var currentScheme: Mode = .dark
     
     // Variables for calculations
     var runningNumber = "0"
@@ -50,16 +51,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        modeView.layer.cornerRadius = 30
+        retreiveDataFromDefaults()
         
+        modeView.layer.cornerRadius = 30
         outputLabel.text = runningNumber
+        
+        checkForColorScheme()
+        
         self.setNeedsStatusBarAppearanceUpdate()
     }
     
-    // Change bar style to white
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+    // Change bar style depending on color scheme
+    private var statusBarForDarkScheme = true
+    
+    private func changeStatusBarColor() {
+        statusBarForDarkScheme = !statusBarForDarkScheme
+        setNeedsStatusBarAppearanceUpdate()
     }
+    
+    public override var preferredStatusBarStyle: UIStatusBarStyle {
+        return statusBarForDarkScheme ? .lightContent : .default
+    }
+    
     
     // Hide modeView when tap outside the view
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -179,7 +192,6 @@ class ViewController: UIViewController {
         firstOperand.text = ""
         secondOperand.text = ""
         operatorLbl.text = ""
-        impact.impactOccurred()
         hideModeView()
     }
     
@@ -274,41 +286,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func darkBtnTapped(_ sender: CustomButton) {
-        bgView.layer.backgroundColor = UIColor(hex: "#4C505E").cgColor
-        outputLabel.textColor = UIColor.white
-        firstOperand.textColor = UIColor.white
-        secondOperand.textColor = UIColor.white
-        clearButton.setTitleColor(UIColor.white, for: .normal)
-        signBtn.setTitleColor(UIColor.white, for: .normal)
-        percentBtn.setTitleColor(UIColor.white, for: .normal)
-        modeBtn.setImage(UIImage(named: "menu"), for: .normal)
-        modeView.layer.backgroundColor = UIColor.white.cgColor
+        enableDarkScheme()
         impact.impactOccurred()
     }
     
     @IBAction func lightBtnTapped(_ sender: CustomButton) {
-        bgView.layer.backgroundColor = UIColor.white.cgColor
-        outputLabel.textColor = UIColor(hex: "#4C505E")
-        firstOperand.textColor = UIColor(hex: "#4C505E")
-        secondOperand.textColor = UIColor(hex: "#4C505E")
-        clearButton.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
-        signBtn.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
-        percentBtn.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
-        modeBtn.setImage(UIImage(named: "menuDark"), for: .normal)
-        modeView.layer.backgroundColor = UIColor(hex: "#4C505E").cgColor
+        enableLightScheme()
         impact.impactOccurred()
     }
     
     @IBAction func oledBtnTapped(_ sender: CustomButton) {
-        bgView.layer.backgroundColor = UIColor.black.cgColor
-        outputLabel.textColor = UIColor.white
-        firstOperand.textColor = UIColor.white
-        secondOperand.textColor = UIColor.white
-        clearButton.setTitleColor(UIColor.white, for: .normal)
-        signBtn.setTitleColor(UIColor.white, for: .normal)
-        percentBtn.setTitleColor(UIColor.white, for: .normal)
-        modeBtn.setImage(UIImage(named: "menu"), for: .normal)
-        modeView.layer.backgroundColor = UIColor.white.cgColor
+        enableOLEDscheme()
         impact.impactOccurred()
     }
     
@@ -347,6 +335,104 @@ extension ViewController {
     func hideModeView() {
         if viewAppeared {
             animateView()
+        }
+    }
+    
+    func retreiveDataFromDefaults() {
+        let temp = UserDefaults.standard.value(forKey: "colorScheme") as? String ?? "No data!"
+        
+        switch temp {
+        case "light":
+            currentScheme = .light
+        case "dark":
+            currentScheme = .dark
+        case "oled":
+            currentScheme = .oled
+        default:
+            currentScheme = .dark
+        }
+    }
+    
+    func checkForColorScheme() {
+        switch currentScheme {
+        case .light:
+            enableLightScheme()
+        case .dark:
+            enableDarkScheme()
+        case .oled:
+            enableOLEDscheme()
+        }
+    }
+    
+    func enableLightScheme() {
+        bgView.layer.backgroundColor = UIColor.white.cgColor
+        outputLabel.textColor = UIColor(hex: "#4C505E")
+        firstOperand.textColor = UIColor(hex: "#4C505E")
+        secondOperand.textColor = UIColor(hex: "#4C505E")
+        clearButton.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
+        signBtn.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
+        percentBtn.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
+        modeBtn.setImage(UIImage(named: "menuDark"), for: .normal)
+        modeView.layer.backgroundColor = UIColor(hex: "#4C505E").cgColor
+        currentScheme = .light
+        
+        UserDefaults.standard.set(currentScheme.rawValue, forKey: "colorScheme")
+        debugPrint(UserDefaults.standard.value(forKey: "colorScheme") ?? "No data!")
+        
+        lightBtn.layer.backgroundColor = UIColor.blue.cgColor
+        darkBtn.layer.backgroundColor = UIColor.clear.cgColor
+        oledBtn.layer.backgroundColor = UIColor.clear.cgColor
+        
+        if statusBarForDarkScheme {
+            changeStatusBarColor()
+        }
+    }
+    
+    func enableDarkScheme() {
+        bgView.layer.backgroundColor = UIColor(hex: "#4C505E").cgColor
+        outputLabel.textColor = UIColor.white
+        firstOperand.textColor = UIColor.white
+        secondOperand.textColor = UIColor.white
+        clearButton.setTitleColor(UIColor.white, for: .normal)
+        signBtn.setTitleColor(UIColor.white, for: .normal)
+        percentBtn.setTitleColor(UIColor.white, for: .normal)
+        modeBtn.setImage(UIImage(named: "menu"), for: .normal)
+        modeView.layer.backgroundColor = UIColor.white.cgColor
+        currentScheme = .dark
+        
+        UserDefaults.standard.set(currentScheme.rawValue, forKey: "colorScheme")
+        debugPrint(UserDefaults.standard.value(forKey: "colorScheme") ?? "No data!")
+        
+        darkBtn.layer.backgroundColor = UIColor.blue.cgColor
+        lightBtn.layer.backgroundColor = UIColor.clear.cgColor
+        oledBtn.layer.backgroundColor = UIColor.clear.cgColor
+        
+        if !statusBarForDarkScheme {
+            changeStatusBarColor()
+        }
+    }
+    
+    func enableOLEDscheme() {
+        bgView.layer.backgroundColor = UIColor.black.cgColor
+        outputLabel.textColor = UIColor.white
+        firstOperand.textColor = UIColor.white
+        secondOperand.textColor = UIColor.white
+        clearButton.setTitleColor(UIColor.white, for: .normal)
+        signBtn.setTitleColor(UIColor.white, for: .normal)
+        percentBtn.setTitleColor(UIColor.white, for: .normal)
+        modeBtn.setImage(UIImage(named: "menu"), for: .normal)
+        modeView.layer.backgroundColor = UIColor.white.cgColor
+        currentScheme = .oled
+        
+        oledBtn.layer.backgroundColor = UIColor.blue.cgColor
+        lightBtn.layer.backgroundColor = UIColor.clear.cgColor
+        darkBtn.layer.backgroundColor = UIColor.clear.cgColor
+        
+        UserDefaults.standard.set(currentScheme.rawValue, forKey: "colorScheme")
+        debugPrint(UserDefaults.standard.value(forKey: "colorScheme") ?? "No data!")
+        
+        if !statusBarForDarkScheme {
+            changeStatusBarColor()
         }
     }
     

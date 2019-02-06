@@ -9,4 +9,10 @@
 import Foundation
 import UIKit
 
-let defaults = UserDefaults.standard
+let colorSchemeStored = UserDefaults.standard.string(forKey: "colorSchemeStored")
+
+enum Mode: String, CaseIterable {
+    case dark = "dark"
+    case light = "light"
+    case oled = "oled"
+}
