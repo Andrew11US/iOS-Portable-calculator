@@ -16,58 +16,145 @@
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="PH9-uy-3bb">
                             <items>
-                                <label width="1" height="30" alignment="right" text="Output" textAlignment="right" id="2zh-wd-MFX"/>
+                                <label width="1" height="30" alignment="right" text="Tap to erace" textAlignment="right" id="2zh-wd-MFX">
+                                    <gestureRecognizers>
+                                        <tapGestureRecognizer id="xnl-mM-7Ct">
+                                            <connections>
+                                                <action selector="eraceOnTap:" destination="AgC-eL-Hgc" id="mx2-WF-FHt"/>
+                                            </connections>
+                                        </tapGestureRecognizer>
+                                    </gestureRecognizers>
+                                </label>
                                 <group width="1" alignment="center" id="CXA-8e-obV">
                                     <items>
                                         <button width="0.25" height="1" alignment="left" verticalAlignment="center" title="+" id="f8H-fU-nrL">
                                             <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                                            <connections>
+                                                <action selector="add:" destination="AgC-eL-Hgc" id="Pdg-K3-qB9"/>
+                                            </connections>
                                         </button>
-                                        <button width="0.25" height="1" alignment="center" verticalAlignment="center" title="-" id="D5i-br-uOK">
+                                        <button width="0.25" height="1" alignment="center" verticalAlignment="center" title="−" id="D5i-br-uOK">
                                             <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                                            <connections>
+                                                <action selector="subtract:" destination="AgC-eL-Hgc" id="sGX-wX-6zT"/>
+                                            </connections>
                                         </button>
-                                        <button width="0.25" height="1" alignment="center" verticalAlignment="center" title="x" id="d0J-Lf-WvP">
+                                        <button width="0.25" height="1" alignment="center" verticalAlignment="center" title="×" id="d0J-Lf-WvP">
                                             <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                                            <connections>
+                                                <action selector="multiply:" destination="AgC-eL-Hgc" id="DwG-Ap-ebD"/>
+                                            </connections>
                                         </button>
-                                        <button width="0.25" height="1" alignment="right" verticalAlignment="center" title="/" id="TEV-JG-nER">
+                                        <button width="0.25" height="1" alignment="right" verticalAlignment="center" title="÷" id="TEV-JG-nER">
                                             <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                                            <connections>
+                                                <action selector="divide:" destination="AgC-eL-Hgc" id="fcV-Z2-c9v"/>
+                                            </connections>
                                         </button>
                                     </items>
                                 </group>
                                 <group width="1" height="25" alignment="center" radius="7" id="czX-Oq-c39">
                                     <items>
-                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="7" id="n7O-Tx-PhY"/>
-                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="8" id="pd2-ig-3Xl"/>
-                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="9" id="Cqa-bH-GT7"/>
+                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="7" id="n7O-Tx-PhY">
+                                            <connections>
+                                                <action selector="sevenTapped:" destination="AgC-eL-Hgc" id="38w-Vj-62s"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="8" id="pd2-ig-3Xl">
+                                            <connections>
+                                                <action selector="eightTapped:" destination="AgC-eL-Hgc" id="kHy-QV-eJg"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="9" id="Cqa-bH-GT7">
+                                            <connections>
+                                                <action selector="nineTapped:" destination="AgC-eL-Hgc" id="plc-z7-nHs"/>
+                                            </connections>
+                                        </button>
                                     </items>
                                 </group>
                                 <group width="1" height="25" alignment="center" radius="7" id="DuM-24-S3c">
                                     <items>
-                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="4" id="oCC-tk-wKq"/>
-                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="5" id="Mob-Pz-w9Y"/>
-                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="6" id="Qd9-X7-pgZ"/>
+                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="4" id="oCC-tk-wKq">
+                                            <connections>
+                                                <action selector="fourTapped:" destination="AgC-eL-Hgc" id="p8d-K5-SRe"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="5" id="Mob-Pz-w9Y">
+                                            <connections>
+                                                <action selector="fiveTapped:" destination="AgC-eL-Hgc" id="o9v-Fr-ckx"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="6" id="Qd9-X7-pgZ">
+                                            <connections>
+                                                <action selector="sixTapped:" destination="AgC-eL-Hgc" id="aZO-Yg-ZgJ"/>
+                                            </connections>
+                                        </button>
                                     </items>
                                 </group>
                                 <group width="1" height="25" alignment="center" radius="7" id="KnQ-gH-tSa">
                                     <items>
-                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="1" id="Ca0-eF-bpq"/>
-                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="2" id="bir-2l-vma"/>
-                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="3" id="QQu-EC-nEB"/>
+                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="1" id="Ca0-eF-bpq">
+                                            <connections>
+                                                <action selector="oneTapped:" destination="AgC-eL-Hgc" id="ryf-6a-6FV"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="2" id="bir-2l-vma">
+                                            <connections>
+                                                <action selector="twoTapped:" destination="AgC-eL-Hgc" id="oE4-eI-Ooe"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="3" id="QQu-EC-nEB">
+                                            <connections>
+                                                <action selector="threeTapped:" destination="AgC-eL-Hgc" id="qw8-dZ-zT6"/>
+                                            </connections>
+                                        </button>
                                     </items>
                                 </group>
                                 <group width="1" height="25" alignment="center" radius="7" id="gJV-Uh-zaq">
                                     <items>
-                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="." id="xws-27-8kY"/>
-                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="0" id="6rd-hF-vxf"/>
-                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="=" id="8ns-nX-gl8"/>
+                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="∙" id="xws-27-8kY">
+                                            <connections>
+                                                <action selector="dotTapped:" destination="AgC-eL-Hgc" id="aCs-bk-WV0"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="0" id="6rd-hF-vxf">
+                                            <connections>
+                                                <action selector="zeroTapped:" destination="AgC-eL-Hgc" id="ibx-6E-28r"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="=" id="8ns-nX-gl8">
+                                            <connections>
+                                                <action selector="equals:" destination="AgC-eL-Hgc" id="HGw-yx-4iS"/>
+                                            </connections>
+                                        </button>
                                     </items>
                                 </group>
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="addBtn" destination="f8H-fU-nrL" id="mjm-dM-pgw"/>
+                        <outlet property="divideBtn" destination="TEV-JG-nER" id="xOS-px-oUl"/>
+                        <outlet property="dotBtn" destination="xws-27-8kY" id="msK-dY-J6L"/>
+                        <outlet property="eightBtn" destination="pd2-ig-3Xl" id="CLE-QT-SsL"/>
+                        <outlet property="equalsBtn" destination="8ns-nX-gl8" id="29r-j0-PK7"/>
+                        <outlet property="fiveBtn" destination="Mob-Pz-w9Y" id="fRD-Mw-PiX"/>
+                        <outlet property="fourBtn" destination="oCC-tk-wKq" id="gLz-Am-Wh8"/>
+                        <outlet property="multiplyBtn" destination="d0J-Lf-WvP" id="Mpc-iM-XFt"/>
+                        <outlet property="nineBtn" destination="Cqa-bH-GT7" id="imU-Tt-yfo"/>
+                        <outlet property="oneBtn" destination="Ca0-eF-bpq" id="CEm-l1-OaE"/>
+                        <outlet property="outputLbl" destination="2zh-wd-MFX" id="JD8-Gh-uab"/>
+                        <outlet property="sevenBtn" destination="n7O-Tx-PhY" id="N26-61-ANw"/>
+                        <outlet property="sixBtn" destination="Qd9-X7-pgZ" id="idN-Zx-if8"/>
+                        <outlet property="subtractBtn" destination="D5i-br-uOK" id="Xac-nR-dQD"/>
+                        <outlet property="threeBtn" destination="QQu-EC-nEB" id="ve9-RP-tQS"/>
+                        <outlet property="twoBtn" destination="bir-2l-vma" id="f86-Wo-Gh2"/>
+                        <outlet property="zeroBtn" destination="6rd-hF-vxf" id="SFb-bA-PxC"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="39.230769230769234" y="26.589743589743591"/>
