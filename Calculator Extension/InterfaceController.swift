@@ -54,7 +54,7 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    @IBAction func eraceOnTap(_ sender: Any) {
+    @IBAction func eraceAll() {
         print("Eraced!")
         runningNumber = ""
         leftValStr = ""
@@ -65,32 +65,77 @@ class InterfaceController: WKInterfaceController {
         outputLbl.setText(runningNumber)
     }
     
+    @IBAction func deleteOnTap(_ sender: Any) {
+        if runningNumber != "" {
+            
+            runningNumber = String(runningNumber.dropLast())
+            outputLbl.setText(runningNumber)
+            
+            if runningNumber == "" {
+                runningNumber = ""
+                
+                outputLbl.setText(runningNumber)
+            }
+            
+        } else {
+            
+            runningNumber = ""
+            outputLbl.setText(runningNumber)
+        }
+        
+        if runningNumber == "0" {
+            outputLbl.setText(runningNumber)
+        }
+        
+        // Generate click
+        WKInterfaceDevice.current().play(.click)
+    }
+    
     @IBAction func add(_ sender: Any) {
         processOperation(CalcService.Operation.add)
+        WKInterfaceDevice.current().play(.click)
     }
     
     @IBAction func subtract(_ sender: Any) {
         processOperation(CalcService.Operation.subtract)
+        WKInterfaceDevice.current().play(.click)
     }
     
     @IBAction func multiply(_ sender: Any) {
         processOperation(CalcService.Operation.multiply)
+        WKInterfaceDevice.current().play(.click)
     }
     
     @IBAction func divide(_ sender: Any) {
         processOperation(CalcService.Operation.divide)
+        WKInterfaceDevice.current().play(.click)
     }
     
     @IBAction func equals(_ sender: Any) {
         if currentOperation != CalcService.Operation.empty {
             processOperation(currentOperation)
-            outputLbl.setText(CalcService.shared.trimZeroForInt(strNumber: result))
             
+            if rightValStr == "" {
+                outputLbl.setText("Error")
+            } else {
+                outputLbl.setText(CalcService.shared.trimZeroForInt(strNumber: result))
+            }
+            
+            
+        } else {
+            debugPrint("Performing no action")
         }
+        
+        WKInterfaceDevice.current().play(.click)
     }
     
     @IBAction func dotTapped(_ sender: Any) {
-        if runningNumber.contains(".") {
+        
+        if runningNumber == "" {
+            runningNumber += "0."
+            outputLbl.setText(runningNumber)
+            
+        } else if runningNumber.contains(".") {
             debugPrint("Dot already exists in number!")
         } else {
             runningNumber += "."
@@ -223,7 +268,7 @@ class InterfaceController: WKInterfaceController {
         if currentOperation != CalcService.Operation.empty {
             if runningNumber != "" {
                 rightValStr = runningNumber
-                runningNumber = "0"
+                runningNumber = ""
                 
                 if currentOperation == CalcService.Operation.multiply {
                     if let res = CalcService.shared.multiply(numAstr: leftValStr, numBstr: rightValStr) {
@@ -260,6 +305,8 @@ class InterfaceController: WKInterfaceController {
                 
                 leftValStr = CalcService.shared.trimZeroForInt(strNumber: result)
                 outputLbl.setText(CalcService.shared.trimZeroForInt(strNumber: result))
+            } else {
+                rightValStr = runningNumber
             }
             
             currentOperation = operation
@@ -269,8 +316,8 @@ class InterfaceController: WKInterfaceController {
             
             // This is the first time operator was pressed
             leftValStr = runningNumber
-            rightValStr = "0"
-            runningNumber = "0"
+            rightValStr = ""
+            runningNumber = ""
             currentOperation = operation
         }
     }

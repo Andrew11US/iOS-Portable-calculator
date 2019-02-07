@@ -20,7 +20,7 @@
                                     <gestureRecognizers>
                                         <tapGestureRecognizer id="xnl-mM-7Ct">
                                             <connections>
-                                                <action selector="eraceOnTap:" destination="AgC-eL-Hgc" id="mx2-WF-FHt"/>
+                                                <action selector="deleteOnTap:" destination="AgC-eL-Hgc" id="ygF-un-d1E"/>
                                             </connections>
                                         </tapGestureRecognizer>
                                     </gestureRecognizers>
@@ -127,6 +127,8 @@
                                             </connections>
                                         </button>
                                         <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="=" id="8ns-nX-gl8">
+                                            <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="boldSystem" pointSize="15"/>
                                             <connections>
                                                 <action selector="equals:" destination="AgC-eL-Hgc" id="HGw-yx-4iS"/>
                                             </connections>
@@ -136,6 +138,15 @@
                             </items>
                         </group>
                     </items>
+                    <menu key="menu" id="p6A-B1-Wh6">
+                        <items>
+                            <menuItem title="Clear" icon="decline" id="9Rf-Ck-Vp4">
+                                <connections>
+                                    <action selector="eraceAll" destination="AgC-eL-Hgc" id="FDW-N9-9I5"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="addBtn" destination="f8H-fU-nrL" id="mjm-dM-pgw"/>
                         <outlet property="divideBtn" destination="TEV-JG-nER" id="xOS-px-oUl"/>

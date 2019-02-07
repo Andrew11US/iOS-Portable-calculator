@@ -96,12 +96,18 @@ class ViewController: UIViewController {
     
     @IBAction func dotTapped(_ btn: UIButton!) {
         
-        if runningNumber.contains(".") {
+        if runningNumber == "" {
+            runningNumber += "0."
+            outputLabel.text = runningNumber
+            
+        } else if runningNumber.contains(".") {
             debugPrint("Dot already exists in number!")
+            
         } else {
             runningNumber += "."
             outputLabel.text = runningNumber
         }
+        
         hideModeView()
     }
     
@@ -174,9 +180,19 @@ class ViewController: UIViewController {
         if currentOperation != CalcService.Operation.empty {
             processOperation(currentOperation)
             
-            secondOperand.text = CalcService.shared.trimZeroForInt(strNumber: rightValStr)
-            outputLabel.text = CalcService.shared.trimZeroForInt(strNumber: result)
+            if rightValStr == "" {
+                outputLabel.text = "Error"
+            } else {
+                secondOperand.text = CalcService.shared.trimZeroForInt(strNumber: rightValStr)
+                outputLabel.text = CalcService.shared.trimZeroForInt(strNumber: result)
+            }
+            
+        } else {
+            debugPrint("Performing no action")
         }
+        
+       
+        
         impact.impactOccurred()
         hideModeView()
     }
@@ -226,7 +242,7 @@ class ViewController: UIViewController {
         if currentOperation != CalcService.Operation.empty {
             if runningNumber != "" {
                 rightValStr = runningNumber
-                runningNumber = "0"
+                runningNumber = ""
                 
                 if currentOperation == CalcService.Operation.multiply {
                     if let res = CalcService.shared.multiply(numAstr: leftValStr, numBstr: rightValStr) {
@@ -261,11 +277,12 @@ class ViewController: UIViewController {
                     }
                 }
                 
-                //                leftValStr = result
                 leftValStr = CalcService.shared.trimZeroForInt(strNumber: result)
+//                secondOperand.text = rightValStr
                 outputLabel.text = CalcService.shared.trimZeroForInt(strNumber: result)
-                //                value = Double(result)!.round(to: 5)
-                //                outputLabel.text = String(value.formattedWithSeparator)
+            } else {
+                rightValStr = runningNumber
+                secondOperand.text = rightValStr
             }
             
             currentOperation = operation
@@ -275,8 +292,8 @@ class ViewController: UIViewController {
             
             // This is the first time operator was pressed
             leftValStr = runningNumber
-            rightValStr = "0"
-            runningNumber = "0"
+            rightValStr = ""
+            runningNumber = ""
             currentOperation = operation
         }
     }
