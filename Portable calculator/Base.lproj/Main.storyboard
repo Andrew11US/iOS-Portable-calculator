@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,11 +21,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Portable_calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aWe-tW-WKO">
-                                <rect key="frame" x="20" y="25" width="335" height="230"/>
+                                <rect key="frame" x="20" y="49" width="335" height="230"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76W-lM-IK3">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -45,22 +45,31 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="82"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zt-VC-XKM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="27.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="27.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                        </variation>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oom-ls-Dq6">
-                                                        <rect key="frame" x="0.0" y="27.5" width="315" height="27"/>
+                                                        <rect key="frame" x="0.0" y="27.333333333333343" width="315" height="27.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                        </variation>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yuc-5G-kcp">
-                                                        <rect key="frame" x="0.0" y="54.5" width="315" height="27.5"/>
+                                                        <rect key="frame" x="0.0" y="54.666666666666664" width="315" height="27.333333333333336"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
                                             </stackView>
@@ -82,24 +91,26 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="nII-8L-wVc" secondAttribute="trailing" constant="20" id="3cK-IN-Mts"/>
                                     <constraint firstItem="nII-8L-wVc" firstAttribute="leading" secondItem="aWe-tW-WKO" secondAttribute="leading" id="6mr-eh-L4d"/>
-                                    <constraint firstAttribute="height" constant="230" id="Ab9-xs-5nc"/>
+                                    <constraint firstAttribute="height" constant="230" id="Ab9-xs-5nc">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="300"/>
+                                    </constraint>
                                 </constraints>
                             </stackView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6L-4F-KUc">
-                                <rect key="frame" x="50" y="290" width="275" height="2"/>
+                                <rect key="frame" x="50" y="314" width="275" height="2"/>
                                 <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="3eR-Op-4xk"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4GN-lY-qVJ">
-                                <rect key="frame" x="0.0" y="292" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="316" width="375" height="462"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2qF-U0-35p">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="68.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LH1-M4-4ym" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="68.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="C">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -112,7 +123,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMS-CO-dGA" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="96" y="0.0" width="87.5" height="68.5"/>
+                                                <rect key="frame" x="95.666666666666686" y="0.0" width="88" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="25"/>
                                                 <state key="normal" title="±">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,7 +136,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d87-p1-xd8" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="191.5" y="0.0" width="88" height="68.5"/>
+                                                <rect key="frame" x="191.66666666666666" y="0.0" width="87.666666666666657" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="%">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -138,7 +149,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfe-R7-s76">
-                                                <rect key="frame" x="287.5" y="0.0" width="87.5" height="68.5"/>
+                                                <rect key="frame" x="287.33333333333331" y="0.0" width="87.666666666666686" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="25"/>
                                                 <state key="normal" title="÷">
                                                     <color key="titleColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -153,10 +164,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pPz-as-hpx">
-                                        <rect key="frame" x="0.0" y="76.5" width="375" height="68.5"/>
+                                        <rect key="frame" x="0.0" y="94" width="375" height="86"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0L-5l-7J0" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="68.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="7">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -169,7 +180,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3p-gy-yji" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="96" y="0.0" width="87.5" height="68.5"/>
+                                                <rect key="frame" x="95.666666666666686" y="0.0" width="88" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="8">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -182,7 +193,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTh-fN-l4h" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="191.5" y="0.0" width="88" height="68.5"/>
+                                                <rect key="frame" x="191.66666666666666" y="0.0" width="87.666666666666657" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="9">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -195,7 +206,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v7-oo-8DA">
-                                                <rect key="frame" x="287.5" y="0.0" width="87.5" height="68.5"/>
+                                                <rect key="frame" x="287.33333333333331" y="0.0" width="87.666666666666686" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="25"/>
                                                 <state key="normal" title="×">
                                                     <color key="titleColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -210,10 +221,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rJc-ti-f2t">
-                                        <rect key="frame" x="0.0" y="153" width="375" height="69"/>
+                                        <rect key="frame" x="0.0" y="188" width="375" height="86"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWo-YE-wsg" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="69"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="4">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -226,7 +237,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fgx-Dx-XqO" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="96" y="0.0" width="87.5" height="69"/>
+                                                <rect key="frame" x="95.666666666666686" y="0.0" width="88" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="5">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -239,7 +250,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd0-Xl-OFo" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="191.5" y="0.0" width="88" height="69"/>
+                                                <rect key="frame" x="191.66666666666666" y="0.0" width="87.666666666666657" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="6">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -252,7 +263,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeA-so-ly0">
-                                                <rect key="frame" x="287.5" y="0.0" width="87.5" height="69"/>
+                                                <rect key="frame" x="287.33333333333331" y="0.0" width="87.666666666666686" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="25"/>
                                                 <state key="normal" title="−">
                                                     <color key="titleColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -267,10 +278,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PPM-Iw-XoE">
-                                        <rect key="frame" x="0.0" y="230" width="375" height="68.5"/>
+                                        <rect key="frame" x="0.0" y="282" width="375" height="86"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEA-UV-4Mp" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="68.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="1">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -283,7 +294,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0N-d9-GJR" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="96" y="0.0" width="87.5" height="68.5"/>
+                                                <rect key="frame" x="95.666666666666686" y="0.0" width="88" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="2">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -296,7 +307,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCZ-Qm-FXG" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="191.5" y="0.0" width="88" height="68.5"/>
+                                                <rect key="frame" x="191.66666666666666" y="0.0" width="87.666666666666657" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="3">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -309,7 +320,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WM1-0Y-YGb">
-                                                <rect key="frame" x="287.5" y="0.0" width="87.5" height="68.5"/>
+                                                <rect key="frame" x="287.33333333333331" y="0.0" width="87.666666666666686" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="25"/>
                                                 <state key="normal" title="+">
                                                     <color key="titleColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -324,10 +335,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wJf-3p-zJH">
-                                        <rect key="frame" x="0.0" y="306.5" width="375" height="68.5"/>
+                                        <rect key="frame" x="0.0" y="376" width="375" height="86"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9m-no-Qaa" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="68.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                 <state key="normal" title=".">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -340,7 +351,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvq-bI-NWg" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="96" y="0.0" width="87.5" height="68.5"/>
+                                                <rect key="frame" x="95.666666666666686" y="0.0" width="88" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="0">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -353,7 +364,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMt-wL-sq9" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="191.5" y="0.0" width="88" height="68.5"/>
+                                                <rect key="frame" x="191.66666666666666" y="0.0" width="87.666666666666657" height="86"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                 <state key="normal" title="←">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -366,7 +377,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utL-Qu-nfY" customClass="CustomButton" customModule="Portable_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="287.5" y="0.0" width="87.5" height="68.5"/>
+                                                <rect key="frame" x="287.33333333333331" y="0.0" width="87.666666666666686" height="86"/>
                                                 <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="36"/>
                                                 <state key="normal" title="=">
@@ -384,7 +395,7 @@
                                 </subviews>
                             </stackView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4To-jF-aTs" customClass="SpringView" customModule="Portable_calculator" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="80" width="300" height="60"/>
+                                <rect key="frame" x="37.666666666666657" y="104" width="300" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="c37-e0-5cw">
                                         <rect key="frame" x="5" y="5" width="290" height="50"/>

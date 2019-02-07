@@ -16,7 +16,7 @@
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="PH9-uy-3bb">
                             <items>
-                                <label width="1" height="30" alignment="right" text="Tap to erace" textAlignment="right" id="2zh-wd-MFX">
+                                <label width="1" height="25" alignment="right" text="Tap to erace" textAlignment="right" id="2zh-wd-MFX">
                                     <gestureRecognizers>
                                         <tapGestureRecognizer id="xnl-mM-7Ct">
                                             <connections>
