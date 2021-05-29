@@ -27,16 +27,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var bgView: UIView!
     
     // Animated view appearance
-    @IBOutlet weak var modeBtn: UIButton!
-    @IBOutlet weak var modeView: SpringView!
+//    @IBOutlet weak var modeBtn: UIButton!
+//    @IBOutlet weak var modeView: SpringView!
     
     @IBOutlet weak var darkBtn: CustomButton!
     @IBOutlet weak var lightBtn: CustomButton!
     @IBOutlet weak var oledBtn: CustomButton!
     
     @IBOutlet weak var constraint: NSLayoutConstraint!
-    var viewAppeared = false
-    var currentScheme: Mode = .dark
+//    var viewAppeared = false
+//    var currentScheme: Mode = .dark
     
     // Variables for calculations
     var runningNumber = "0"
@@ -51,13 +51,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        retreiveDataFromDefaults()
+//        retreiveDataFromDefaults()
         
-        modeView.layer.cornerRadius = 30
-        modeBtn.layer.cornerRadius = 25
+//        modeView.layer.cornerRadius = 30
+//        modeBtn.layer.cornerRadius = 25
         outputLabel.text = runningNumber
         
-        checkForColorScheme()
+//        checkForColorScheme()
         
         self.setNeedsStatusBarAppearanceUpdate()
     }
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
     
     // Hide modeView when tap outside the view
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        hideModeView()
+//        hideModeView()
     }
     
     @IBAction func numberPressed(_ btn: UIButton!) {
@@ -91,7 +91,7 @@ class ViewController: UIViewController {
         }
         
         outputLabel.text = runningNumber
-        hideModeView()
+//        hideModeView()
     }
     
     @IBAction func dotTapped(_ btn: UIButton!) {
@@ -108,35 +108,35 @@ class ViewController: UIViewController {
             outputLabel.text = runningNumber
         }
         
-        hideModeView()
+//        hideModeView()
     }
     
     @IBAction func onDividePressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.divide)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.divide.rawValue
-        hideModeView()
+//        hideModeView()
     }
     
     @IBAction func onMultiplyPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.multiply)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.multiply.rawValue
-        hideModeView()
+//        hideModeView()
     }
     
     @IBAction func onSubtractPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.subtract)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.subtract.rawValue
-        hideModeView()
+//        hideModeView()
     }
     
     @IBAction func onAddPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.add)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.add.rawValue
-        hideModeView()
+//        hideModeView()
     }
     
     @IBAction func signPressed(_ sender: AnyObject) {
@@ -149,7 +149,7 @@ class ViewController: UIViewController {
             result = "0"
             print("Result is zero")
         }
-        hideModeView()
+//        hideModeView()
     }
     
     @IBAction func percentPressed(_ sender: AnyObject) {
@@ -172,7 +172,7 @@ class ViewController: UIViewController {
                 print("Result is zero")
             }
         }
-        hideModeView()
+//        hideModeView()
     }
     
     @IBAction func onEqualPressed(_ sender: AnyObject) {
@@ -194,7 +194,7 @@ class ViewController: UIViewController {
        
         
         impact.impactOccurred()
-        hideModeView()
+//        hideModeView()
     }
     
     @IBAction func onClearPressed(_ sender: AnyObject) {
@@ -209,7 +209,7 @@ class ViewController: UIViewController {
         firstOperand.text = ""
         secondOperand.text = ""
         operatorLbl.text = ""
-        hideModeView()
+//        hideModeView()
     }
     
     @IBAction func delTapped(_ sender: AnyObject) {
@@ -234,7 +234,7 @@ class ViewController: UIViewController {
         if runningNumber == "0" {
             outputLabel.text = "0"
         }
-        hideModeView()
+//        hideModeView()
     }
     
     func processOperation(_ operation: CalcService.Operation) {
@@ -300,167 +300,167 @@ class ViewController: UIViewController {
     
     @IBAction func modeRevealTapped(_ sender: UIButton) {
         impact.impactOccurred()
-        animateView()
+//        animateView()
     }
     
     @IBAction func darkBtnTapped(_ sender: CustomButton) {
-        enableDarkScheme()
+//        enableDarkScheme()
         impact.impactOccurred()
     }
     
     @IBAction func lightBtnTapped(_ sender: CustomButton) {
-        enableLightScheme()
+//        enableLightScheme()
         impact.impactOccurred()
     }
     
     @IBAction func oledBtnTapped(_ sender: CustomButton) {
-        enableOLEDscheme()
+//        enableOLEDscheme()
         impact.impactOccurred()
     }
     
 }
 
-extension ViewController {
-    
-    func animateView() {
-        if viewAppeared {
-            setForDisappear()
-            viewAppeared = false
-        } else {
-            setForAppear()
-            viewAppeared = true
-        }
-        
-        //  viewAppeared = viewAppeared ? false : true
-        
-        modeView.animate()
-    }
-    
-    func setForAppear() {
-        modeView.duration = 1.0
-        modeView.animation = Spring.AnimationPreset.SlideDown.rawValue
-        modeView.curve = Spring.AnimationCurve.EaseIn.rawValue
-        constraint.constant = 60
-    }
-    
-    func setForDisappear() {
-        modeView.duration = 1.0
-        modeView.animation = Spring.AnimationPreset.SlideUp.rawValue
-        modeView.curve = Spring.AnimationCurve.EaseIn.rawValue
-        constraint.constant = -240
-    }
-    
-    func hideModeView() {
-        if viewAppeared {
-            animateView()
-        }
-    }
-    
-    func retreiveDataFromDefaults() {
-        let temp = UserDefaults.standard.value(forKey: "colorScheme") as? String ?? "No data!"
-        
-        switch temp {
-        case "light":
-            currentScheme = .light
-        case "dark":
-            currentScheme = .dark
-        case "oled":
-            currentScheme = .oled
-        default:
-            currentScheme = .dark
-        }
-    }
-    
-    func checkForColorScheme() {
-        switch currentScheme {
-        case .light:
-            enableLightScheme()
-        case .dark:
-            enableDarkScheme()
-        case .oled:
-            enableOLEDscheme()
-        }
-    }
-    
-    func enableLightScheme() {
-        bgView.layer.backgroundColor = UIColor.white.cgColor
-        outputLabel.textColor = UIColor(hex: "#4C505E")
-        firstOperand.textColor = UIColor(hex: "#4C505E")
-        secondOperand.textColor = UIColor(hex: "#4C505E")
-        clearButton.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
-        signBtn.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
-        percentBtn.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
-        modeBtn.setImage(UIImage(named: "Light-menu"), for: .normal)
-        modeView.layer.backgroundColor = UIColor(hex: "#4C505E").cgColor
-        currentScheme = .light
-        
-        oledBtn.setImage(UIImage(named: "OLED"), for: .normal)
-        lightBtn.setImage(UIImage(named: "sLight"), for: .normal)
-        darkBtn.setImage(UIImage(named: "Dark"), for: .normal)
-        
-        UserDefaults.standard.set(currentScheme.rawValue, forKey: "colorScheme")
-        debugPrint(UserDefaults.standard.value(forKey: "colorScheme") ?? "No data!")
-        
-        lightBtn.layer.backgroundColor = UIColor.blue.cgColor
-        darkBtn.layer.backgroundColor = UIColor.clear.cgColor
-        oledBtn.layer.backgroundColor = UIColor.clear.cgColor
-        
-        if statusBarForDarkScheme {
-            changeStatusBarColor()
-        }
-    }
-    
-    func enableDarkScheme() {
-        bgView.layer.backgroundColor = UIColor(hex: "#4C505E").cgColor
-        outputLabel.textColor = UIColor.white
-        firstOperand.textColor = UIColor.white
-        secondOperand.textColor = UIColor.white
-        clearButton.setTitleColor(UIColor.white, for: .normal)
-        signBtn.setTitleColor(UIColor.white, for: .normal)
-        percentBtn.setTitleColor(UIColor.white, for: .normal)
-        modeBtn.setImage(UIImage(named: "Dark-menu"), for: .normal)
-        modeView.layer.backgroundColor = UIColor.white.cgColor
-        currentScheme = .dark
-        
-        oledBtn.setImage(UIImage(named: "OLED"), for: .normal)
-        lightBtn.setImage(UIImage(named: "Light"), for: .normal)
-        darkBtn.setImage(UIImage(named: "sDark"), for: .normal)
-        
-        UserDefaults.standard.set(currentScheme.rawValue, forKey: "colorScheme")
-        debugPrint(UserDefaults.standard.value(forKey: "colorScheme") ?? "No data!")
-        
-        darkBtn.layer.backgroundColor = UIColor.blue.cgColor
-        lightBtn.layer.backgroundColor = UIColor.clear.cgColor
-        oledBtn.layer.backgroundColor = UIColor.clear.cgColor
-        
-        if !statusBarForDarkScheme {
-            changeStatusBarColor()
-        }
-    }
-    
-    func enableOLEDscheme() {
-        bgView.layer.backgroundColor = UIColor.black.cgColor
-        outputLabel.textColor = UIColor.white
-        firstOperand.textColor = UIColor.white
-        secondOperand.textColor = UIColor.white
-        clearButton.setTitleColor(UIColor.white, for: .normal)
-        signBtn.setTitleColor(UIColor.white, for: .normal)
-        percentBtn.setTitleColor(UIColor.white, for: .normal)
-        modeBtn.setImage(UIImage(named: "OLED-menu"), for: .normal)
-        modeView.layer.backgroundColor = UIColor.white.cgColor
-        currentScheme = .oled
-        
-        oledBtn.setImage(UIImage(named: "sOLED"), for: .normal)
-        lightBtn.setImage(UIImage(named: "Light"), for: .normal)
-        darkBtn.setImage(UIImage(named: "Dark"), for: .normal)
-        
-        UserDefaults.standard.set(currentScheme.rawValue, forKey: "colorScheme")
-        debugPrint(UserDefaults.standard.value(forKey: "colorScheme") ?? "No data!")
-        
-        if !statusBarForDarkScheme {
-            changeStatusBarColor()
-        }
-    }
-    
-}
+//extension ViewController {
+//
+//    func animateView() {
+//        if viewAppeared {
+//            setForDisappear()
+//            viewAppeared = false
+//        } else {
+//            setForAppear()
+//            viewAppeared = true
+//        }
+//
+//        //  viewAppeared = viewAppeared ? false : true
+//
+//        modeView.animate()
+//    }
+//
+//    func setForAppear() {
+//        modeView.duration = 1.0
+//        modeView.animation = Spring.AnimationPreset.SlideDown.rawValue
+//        modeView.curve = Spring.AnimationCurve.EaseIn.rawValue
+//        constraint.constant = 60
+//    }
+//
+//    func setForDisappear() {
+//        modeView.duration = 1.0
+//        modeView.animation = Spring.AnimationPreset.SlideUp.rawValue
+//        modeView.curve = Spring.AnimationCurve.EaseIn.rawValue
+//        constraint.constant = -240
+//    }
+//
+//    func hideModeView() {
+//        if viewAppeared {
+//            animateView()
+//        }
+//    }
+//
+//    func retreiveDataFromDefaults() {
+//        let temp = UserDefaults.standard.value(forKey: "colorScheme") as? String ?? "No data!"
+//
+//        switch temp {
+//        case "light":
+//            currentScheme = .light
+//        case "dark":
+//            currentScheme = .dark
+//        case "oled":
+//            currentScheme = .oled
+//        default:
+//            currentScheme = .dark
+//        }
+//    }
+//
+//    func checkForColorScheme() {
+//        switch currentScheme {
+//        case .light:
+//            enableLightScheme()
+//        case .dark:
+//            enableDarkScheme()
+//        case .oled:
+//            enableOLEDscheme()
+//        }
+//    }
+//
+//    func enableLightScheme() {
+//        bgView.layer.backgroundColor = UIColor.white.cgColor
+//        outputLabel.textColor = UIColor(hex: "#4C505E")
+//        firstOperand.textColor = UIColor(hex: "#4C505E")
+//        secondOperand.textColor = UIColor(hex: "#4C505E")
+//        clearButton.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
+//        signBtn.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
+//        percentBtn.setTitleColor(UIColor(hex: "#4C505E"), for: .normal)
+//        modeBtn.setImage(UIImage(named: "Light-menu"), for: .normal)
+//        modeView.layer.backgroundColor = UIColor(hex: "#4C505E").cgColor
+//        currentScheme = .light
+//
+//        oledBtn.setImage(UIImage(named: "OLED"), for: .normal)
+//        lightBtn.setImage(UIImage(named: "sLight"), for: .normal)
+//        darkBtn.setImage(UIImage(named: "Dark"), for: .normal)
+//
+//        UserDefaults.standard.set(currentScheme.rawValue, forKey: "colorScheme")
+//        debugPrint(UserDefaults.standard.value(forKey: "colorScheme") ?? "No data!")
+//
+//        lightBtn.layer.backgroundColor = UIColor.blue.cgColor
+//        darkBtn.layer.backgroundColor = UIColor.clear.cgColor
+//        oledBtn.layer.backgroundColor = UIColor.clear.cgColor
+//
+//        if statusBarForDarkScheme {
+//            changeStatusBarColor()
+//        }
+//    }
+//
+//    func enableDarkScheme() {
+//        bgView.layer.backgroundColor = UIColor(hex: "#4C505E").cgColor
+//        outputLabel.textColor = UIColor.white
+//        firstOperand.textColor = UIColor.white
+//        secondOperand.textColor = UIColor.white
+//        clearButton.setTitleColor(UIColor.white, for: .normal)
+//        signBtn.setTitleColor(UIColor.white, for: .normal)
+//        percentBtn.setTitleColor(UIColor.white, for: .normal)
+//        modeBtn.setImage(UIImage(named: "Dark-menu"), for: .normal)
+//        modeView.layer.backgroundColor = UIColor.white.cgColor
+//        currentScheme = .dark
+//
+//        oledBtn.setImage(UIImage(named: "OLED"), for: .normal)
+//        lightBtn.setImage(UIImage(named: "Light"), for: .normal)
+//        darkBtn.setImage(UIImage(named: "sDark"), for: .normal)
+//
+//        UserDefaults.standard.set(currentScheme.rawValue, forKey: "colorScheme")
+//        debugPrint(UserDefaults.standard.value(forKey: "colorScheme") ?? "No data!")
+//
+//        darkBtn.layer.backgroundColor = UIColor.blue.cgColor
+//        lightBtn.layer.backgroundColor = UIColor.clear.cgColor
+//        oledBtn.layer.backgroundColor = UIColor.clear.cgColor
+//
+//        if !statusBarForDarkScheme {
+//            changeStatusBarColor()
+//        }
+//    }
+//
+//    func enableOLEDscheme() {
+//        bgView.layer.backgroundColor = UIColor.black.cgColor
+//        outputLabel.textColor = UIColor.white
+//        firstOperand.textColor = UIColor.white
+//        secondOperand.textColor = UIColor.white
+//        clearButton.setTitleColor(UIColor.white, for: .normal)
+//        signBtn.setTitleColor(UIColor.white, for: .normal)
+//        percentBtn.setTitleColor(UIColor.white, for: .normal)
+//        modeBtn.setImage(UIImage(named: "OLED-menu"), for: .normal)
+//        modeView.layer.backgroundColor = UIColor.white.cgColor
+//        currentScheme = .oled
+//
+//        oledBtn.setImage(UIImage(named: "sOLED"), for: .normal)
+//        lightBtn.setImage(UIImage(named: "Light"), for: .normal)
+//        darkBtn.setImage(UIImage(named: "Dark"), for: .normal)
+//
+//        UserDefaults.standard.set(currentScheme.rawValue, forKey: "colorScheme")
+//        debugPrint(UserDefaults.standard.value(forKey: "colorScheme") ?? "No data!")
+//
+//        if !statusBarForDarkScheme {
+//            changeStatusBarColor()
+//        }
+//    }
+//
+//}
 
