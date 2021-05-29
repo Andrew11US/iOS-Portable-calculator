@@ -95,48 +95,43 @@ class ViewController: UIViewController {
     }
     
     @IBAction func dotTapped(_ btn: UIButton!) {
-        
         if runningNumber == "" {
             runningNumber += "0."
             outputLabel.text = runningNumber
-            
         } else if runningNumber.contains(".") {
             debugPrint("Dot already exists in number!")
-            
         } else {
             runningNumber += "."
             outputLabel.text = runningNumber
         }
-        
-//        hideModeView()
     }
     
     @IBAction func onDividePressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.divide)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.divide.rawValue
-//        hideModeView()
+        impact.impactOccurred()
     }
     
     @IBAction func onMultiplyPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.multiply)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.multiply.rawValue
-//        hideModeView()
+        impact.impactOccurred()
     }
     
     @IBAction func onSubtractPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.subtract)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.subtract.rawValue
-//        hideModeView()
+        impact.impactOccurred()
     }
     
     @IBAction func onAddPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.add)
         firstOperand.text = CalcService.shared.trimZeroForInt(strNumber: leftValStr)
         operatorLbl.text = CalcService.Operation.add.rawValue
-//        hideModeView()
+        impact.impactOccurred()
     }
     
     @IBAction func signPressed(_ sender: AnyObject) {
@@ -149,7 +144,6 @@ class ViewController: UIViewController {
             result = "0"
             print("Result is zero")
         }
-//        hideModeView()
     }
     
     @IBAction func percentPressed(_ sender: AnyObject) {
@@ -209,7 +203,7 @@ class ViewController: UIViewController {
         firstOperand.text = ""
         secondOperand.text = ""
         operatorLbl.text = ""
-//        hideModeView()
+        impact.impactOccurred()
     }
     
     @IBAction func delTapped(_ sender: AnyObject) {

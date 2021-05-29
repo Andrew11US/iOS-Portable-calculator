@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch42" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="18122" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="18022"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -16,11 +14,11 @@
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="PH9-uy-3bb">
                             <items>
-                                <label width="1" height="25" alignment="right" text="Tap to erace" textAlignment="right" id="2zh-wd-MFX">
+                                <label width="1" height="25" alignment="right" text="Doubletap to erace" textAlignment="right" id="2zh-wd-MFX">
                                     <gestureRecognizers>
-                                        <tapGestureRecognizer id="xnl-mM-7Ct">
+                                        <tapGestureRecognizer numberOfTapsRequired="2" id="xnl-mM-7Ct">
                                             <connections>
-                                                <action selector="deleteOnTap:" destination="AgC-eL-Hgc" id="ygF-un-d1E"/>
+                                                <action selector="eraceAll" destination="AgC-eL-Hgc" id="Z0K-cj-lY6"/>
                                             </connections>
                                         </tapGestureRecognizer>
                                     </gestureRecognizers>
@@ -138,15 +136,6 @@
                             </items>
                         </group>
                     </items>
-                    <menu key="menu" id="p6A-B1-Wh6">
-                        <items>
-                            <menuItem title="Clear" icon="decline" id="9Rf-Ck-Vp4">
-                                <connections>
-                                    <action selector="eraceAll" destination="AgC-eL-Hgc" id="FDW-N9-9I5"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
                     <connections>
                         <outlet property="addBtn" destination="f8H-fU-nrL" id="mjm-dM-pgw"/>
                         <outlet property="divideBtn" destination="TEV-JG-nER" id="xOS-px-oUl"/>

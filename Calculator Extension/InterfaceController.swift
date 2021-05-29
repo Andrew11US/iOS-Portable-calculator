@@ -63,6 +63,7 @@ class InterfaceController: WKInterfaceController {
         currentOperation = CalcService.Operation.empty
         
         outputLbl.setText(runningNumber)
+        WKInterfaceDevice.current().play(.click)
     }
     
     @IBAction func deleteOnTap(_ sender: Any) {
