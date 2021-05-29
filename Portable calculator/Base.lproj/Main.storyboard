@@ -66,6 +66,12 @@
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="76"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="52"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="52"/>
+                                                </variation>
                                             </label>
                                         </subviews>
                                         <constraints>
@@ -415,57 +421,57 @@
     </scenes>
     <designables>
         <designable name="Fgx-Dx-XqO">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="G9m-no-Qaa">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="LH1-M4-4ym">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="N0N-d9-GJR">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="QMt-wL-sq9">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="Rvq-bI-NWg">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="aEA-UV-4Mp">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="d87-p1-xd8">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="fWo-YE-wsg">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="kCZ-Qm-FXG">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="n3p-gy-yji">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="o0L-5l-7J0">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="oTh-fN-l4h">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
         <designable name="tMS-CO-dGA">
             <size key="intrinsicContentSize" width="30" height="42"/>
         </designable>
         <designable name="utL-Qu-nfY">
-            <size key="intrinsicContentSize" width="30" height="56"/>
+            <size key="intrinsicContentSize" width="30" height="54"/>
         </designable>
         <designable name="xd0-Xl-OFo">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="33"/>
         </designable>
     </designables>
     <resources>
         <namedColor name="dynamic-ui-color">
-            <color red="0.29803921568627451" green="0.31372549019607843" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.29800000786781311" green="0.31400001049041748" blue="0.36899998784065247" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
